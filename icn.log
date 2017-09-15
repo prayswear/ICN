@@ -1,0 +1,265 @@
+[2017-09-14 14:55:40,228] ncs_http_server.py [line:67] INFO: Starting server at :127.0.0.1:12700
+[2017-09-14 14:55:40,233] ncs_http_server.py [line:70] INFO: Running server...
+[2017-09-14 14:58:20,378] ncs_db.py [line:20] INFO: Get connection client.
+[2017-09-14 14:58:20,379] ncs_db.py [line:22] INFO: Get database: ncs
+[2017-09-14 14:58:20,379] ncs_http_server.py [line:61] INFO: Starting server at :127.0.0.1:12700
+[2017-09-14 14:58:20,382] ncs_http_server.py [line:64] INFO: Running server...
+[2017-09-14 14:58:51,253] ncs_db.py [line:20] INFO: Get connection client.
+[2017-09-14 14:58:51,254] ncs_db.py [line:22] INFO: Get database: ncs
+[2017-09-14 14:58:51,254] ncs_http_server.py [line:61] INFO: Starting server at :127.0.0.1:12700
+[2017-09-14 14:58:51,257] ncs_http_server.py [line:64] INFO: Running server...
+[2017-09-14 14:58:54,506] ncs_db.py [line:37] INFO: Find {'hrn': 'lijq'} item in NCS_TBL, result is None
+[2017-09-14 14:58:54,862] ncs_db.py [line:28] INFO: Add new item: {'hrn': 'lijq', 'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'type': 'music', 'lmt': datetime.datetime(2017, 9, 14, 14, 58, 54, 506922), '_id': ObjectId('59ba28ae3a25530d98a93be0')} to NCS_TBL
+[2017-09-14 15:00:25,576] ncs_db.py [line:37] INFO: Find {'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e'} item in NCS_TBL, result is {'_id': ObjectId('59ba28ae3a25530d98a93be0'), 'hrn': 'lijq', 'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'type': 'music', 'lmt': datetime.datetime(2017, 9, 14, 14, 58, 54, 506000)}
+[2017-09-14 15:20:06,147] gnrs_db.py [line:20] INFO: Get connection client.
+[2017-09-14 15:20:06,147] gnrs_db.py [line:22] INFO: Get database: gnrs
+[2017-09-14 15:20:06,147] gnrs_http_server.py [line:60] INFO: Starting server at :127.0.0.1:12700
+[2017-09-14 15:20:06,151] gnrs_http_server.py [line:63] INFO: Running server...
+[2017-09-14 15:20:31,964] gnrs_db.py [line:37] INFO: Find {'guid': '1'} item in GUID_NA_tbl, result is None
+[2017-09-14 15:20:31,965] gnrs_db.py [line:28] INFO: Add new item: {'guid': '1', 'nas': "['192.168.1.1']", 'lmt': datetime.datetime(2017, 9, 14, 15, 20, 31, 964605), '_id': ObjectId('59ba2dbf3a25533fa4a6f4de')} to GUID_NA_tbl
+[2017-09-14 15:20:43,717] gnrs_db.py [line:37] INFO: Find {'guid': '1'} item in GUID_NA_tbl, result is {'_id': ObjectId('59ba2dbf3a25533fa4a6f4de'), 'guid': '1', 'nas': "['192.168.1.1']", 'lmt': datetime.datetime(2017, 9, 14, 15, 20, 31, 964000)}
+[2017-09-14 15:20:43,721] gnrs_db.py [line:33] INFO: Update {'guid': '1'}item in GUID_NA_tbl
+[2017-09-14 15:20:59,819] gnrs_db.py [line:37] INFO: Find 1 item in GUID_NA_tbl, result is None
+[2017-09-14 15:20:59,845] gnrs_db.py [line:37] INFO: Find 1 item in GUID_NA_tbl, result is None
+[2017-09-14 15:20:59,847] gnrs_db.py [line:37] INFO: Find 1 item in GUID_NA_tbl, result is None
+[2017-09-14 15:20:59,849] gnrs_db.py [line:37] INFO: Find 1 item in GUID_NA_tbl, result is None
+[2017-09-14 15:20:59,877] gnrs_db.py [line:37] INFO: Find 1 item in GUID_NA_tbl, result is None
+[2017-09-14 15:21:04,883] gnrs_db.py [line:37] INFO: Find 1 item in GUID_NA_tbl, result is None
+[2017-09-14 15:21:34,890] gnrs_db.py [line:37] INFO: Find 1 item in GUID_NA_tbl, result is None
+[2017-09-14 15:21:50,258] gnrs_db.py [line:20] INFO: Get connection client.
+[2017-09-14 15:21:50,258] gnrs_db.py [line:22] INFO: Get database: gnrs
+[2017-09-14 15:21:50,258] gnrs_http_server.py [line:60] INFO: Starting server at :127.0.0.1:12700
+[2017-09-14 15:21:50,261] gnrs_http_server.py [line:63] INFO: Running server...
+[2017-09-14 15:21:53,815] gnrs_db.py [line:37] INFO: Find {'guid': '1'} item in GUID_NA_tbl, result is {'_id': ObjectId('59ba2dbf3a25533fa4a6f4de'), 'guid': '1', 'nas': "['192.168.1.1', '192.168.1.2']", 'lmt': datetime.datetime(2017, 9, 14, 15, 20, 43, 717000)}
+[2017-09-14 15:22:11,773] gnrs_db.py [line:37] INFO: Find {'guid': '2'} item in GUID_NA_tbl, result is None
+[2017-09-14 15:22:11,780] gnrs_db.py [line:37] INFO: Find {'guid': '2'} item in GUID_NA_tbl, result is None
+[2017-09-14 15:22:11,785] gnrs_db.py [line:37] INFO: Find {'guid': '2'} item in GUID_NA_tbl, result is None
+[2017-09-14 15:22:11,817] gnrs_db.py [line:37] INFO: Find {'guid': '2'} item in GUID_NA_tbl, result is None
+[2017-09-14 15:22:16,825] gnrs_db.py [line:37] INFO: Find {'guid': '2'} item in GUID_NA_tbl, result is None
+[2017-09-14 15:22:34,524] gnrs_db.py [line:20] INFO: Get connection client.
+[2017-09-14 15:22:34,524] gnrs_db.py [line:22] INFO: Get database: gnrs
+[2017-09-14 15:22:34,524] gnrs_http_server.py [line:62] INFO: Starting server at :127.0.0.1:12700
+[2017-09-14 15:22:34,527] gnrs_http_server.py [line:65] INFO: Running server...
+[2017-09-14 15:22:37,903] gnrs_db.py [line:37] INFO: Find {'guid': '1'} item in GUID_NA_tbl, result is {'_id': ObjectId('59ba2dbf3a25533fa4a6f4de'), 'guid': '1', 'nas': "['192.168.1.1', '192.168.1.2']", 'lmt': datetime.datetime(2017, 9, 14, 15, 20, 43, 717000)}
+[2017-09-14 15:22:44,253] gnrs_db.py [line:37] INFO: Find {'guid': '2'} item in GUID_NA_tbl, result is None
+[2017-09-14 15:22:44,259] gnrs_db.py [line:37] INFO: Find {'guid': '2'} item in GUID_NA_tbl, result is None
+[2017-09-14 15:22:44,292] gnrs_db.py [line:37] INFO: Find {'guid': '2'} item in GUID_NA_tbl, result is None
+[2017-09-14 15:22:49,300] gnrs_db.py [line:37] INFO: Find {'guid': '2'} item in GUID_NA_tbl, result is None
+[2017-09-14 15:23:19,311] gnrs_db.py [line:37] INFO: Find {'guid': '2'} item in GUID_NA_tbl, result is None
+[2017-09-14 15:23:20,138] gnrs_db.py [line:20] INFO: Get connection client.
+[2017-09-14 15:23:20,138] gnrs_db.py [line:22] INFO: Get database: gnrs
+[2017-09-14 15:23:20,138] gnrs_http_server.py [line:64] INFO: Starting server at :127.0.0.1:12700
+[2017-09-14 15:23:20,141] gnrs_http_server.py [line:67] INFO: Running server...
+[2017-09-14 15:23:22,409] gnrs_db.py [line:37] INFO: Find {'guid': '2'} item in GUID_NA_tbl, result is None
+[2017-09-14 15:23:27,294] gnrs_db.py [line:37] INFO: Find {'guid': '1'} item in GUID_NA_tbl, result is {'_id': ObjectId('59ba2dbf3a25533fa4a6f4de'), 'guid': '1', 'nas': "['192.168.1.1', '192.168.1.2']", 'lmt': datetime.datetime(2017, 9, 14, 15, 20, 43, 717000)}
+[2017-09-14 15:34:54,845] gnrs_db.py [line:20] INFO: Get connection client.
+[2017-09-14 15:34:54,845] gnrs_db.py [line:22] INFO: Get database: gnrs
+[2017-09-14 15:34:54,845] gnrs_http_server.py [line:64] INFO: Starting server at :127.0.0.1:12700
+[2017-09-14 15:34:54,849] gnrs_http_server.py [line:67] INFO: Running server...
+[2017-09-14 15:34:57,576] gnrs_db.py [line:37] INFO: Find {'guid': '1'} item in GUID_NA_tbl, result is {'_id': ObjectId('59ba2dbf3a25533fa4a6f4de'), 'guid': '1', 'nas': "['192.168.1.1', '192.168.1.2']", 'lmt': datetime.datetime(2017, 9, 14, 15, 20, 43, 717000)}
+[2017-09-14 15:52:05,925] ncs_db.py [line:20] INFO: Get connection client.
+[2017-09-14 15:52:05,925] ncs_db.py [line:22] INFO: Get database: ncs
+[2017-09-14 15:52:05,925] ncs_http_server.py [line:65] INFO: Starting server at :127.0.0.1:12701
+[2017-09-14 15:52:05,928] ncs_http_server.py [line:68] INFO: Running server...
+[2017-09-14 15:52:42,515] ncs_db.py [line:37] INFO: Find {'hrn': 'junjun'} item in NCS_tbl, result is None
+[2017-09-14 15:52:42,656] ncs_db.py [line:28] INFO: Add new item: {'hrn': 'junjun', 'guid': '61d71ca4b8d6a93780bc0452cc45ae9d666f3df7', 'type': 'human', 'lmt': datetime.datetime(2017, 9, 14, 15, 52, 42, 515206), '_id': ObjectId('59ba354a3a255318e87ca5c6')} to NCS_tbl
+[2017-09-14 15:52:49,331] ncs_db.py [line:37] INFO: Find {'hrn': 'junjun'} item in NCS_tbl, result is {'_id': ObjectId('59ba354a3a255318e87ca5c6'), 'hrn': 'junjun', 'guid': '61d71ca4b8d6a93780bc0452cc45ae9d666f3df7', 'type': 'human', 'lmt': datetime.datetime(2017, 9, 14, 15, 52, 42, 515000)}
+[2017-09-14 15:52:49,331] ncs_http_server.py [line:21] WARNING: HRN: junjun is already exist, get guid failed.
+[2017-09-14 15:52:55,457] ncs_db.py [line:37] INFO: Find {'hrn': 'junjun2'} item in NCS_tbl, result is None
+[2017-09-14 15:52:55,458] ncs_db.py [line:28] INFO: Add new item: {'hrn': 'junjun2', 'guid': '343e8f6ba1adb66ef2f98b288ea0c403c7a64c82', 'type': 'human', 'lmt': datetime.datetime(2017, 9, 14, 15, 52, 55, 458135), '_id': ObjectId('59ba35573a255318e87ca5c7')} to NCS_tbl
+[2017-09-14 15:53:17,271] ncs_db.py [line:37] INFO: Find {'guid': '61d71ca4b8d6a93780bc0452cc45ae9d666f3df7'} item in NCS_tbl, result is {'_id': ObjectId('59ba354a3a255318e87ca5c6'), 'hrn': 'junjun', 'guid': '61d71ca4b8d6a93780bc0452cc45ae9d666f3df7', 'type': 'human', 'lmt': datetime.datetime(2017, 9, 14, 15, 52, 42, 515000)}
+[2017-09-14 15:53:30,949] ncs_db.py [line:20] INFO: Get connection client.
+[2017-09-14 15:53:30,949] ncs_db.py [line:22] INFO: Get database: ncs
+[2017-09-14 15:53:30,949] ncs_http_server.py [line:65] INFO: Starting server at :127.0.0.1:12701
+[2017-09-14 15:53:30,952] ncs_http_server.py [line:68] INFO: Running server...
+[2017-09-14 15:54:11,327] gnrs_db.py [line:20] INFO: Get connection client.
+[2017-09-14 15:54:11,328] gnrs_db.py [line:22] INFO: Get database: gnrs
+[2017-09-14 15:54:11,328] gnrs_http_server.py [line:64] INFO: Starting server at :127.0.0.1:12700
+[2017-09-14 15:54:11,335] gnrs_http_server.py [line:67] INFO: Running server...
+[2017-09-14 15:54:14,371] gnrs_db.py [line:37] INFO: Find {'guid': '61d71ca4b8d6a93780bc0452cc45ae9d666f3df7'} item in GUID_NA_tbl, result is None
+[2017-09-14 15:54:14,372] gnrs_db.py [line:28] INFO: Add new item: {'guid': '61d71ca4b8d6a93780bc0452cc45ae9d666f3df7', 'nas': "['192.168.0.0']", 'lmt': datetime.datetime(2017, 9, 14, 15, 54, 14, 371628), '_id': ObjectId('59ba35a63a2553700cfb2c2e')} to GUID_NA_tbl
+[2017-09-14 15:54:16,940] gnrs_db.py [line:37] INFO: Find {'guid': '61d71ca4b8d6a93780bc0452cc45ae9d666f3df7'} item in GUID_NA_tbl, result is {'_id': ObjectId('59ba35a63a2553700cfb2c2e'), 'guid': '61d71ca4b8d6a93780bc0452cc45ae9d666f3df7', 'nas': "['192.168.0.0']", 'lmt': datetime.datetime(2017, 9, 14, 15, 54, 14, 371000)}
+[2017-09-14 15:54:24,469] gnrs_db.py [line:37] INFO: Find {'guid': '61d71ca4b8d6a93780bc0452cc45ae9d666f3df7'} item in GUID_NA_tbl, result is {'_id': ObjectId('59ba35a63a2553700cfb2c2e'), 'guid': '61d71ca4b8d6a93780bc0452cc45ae9d666f3df7', 'nas': "['192.168.0.0']", 'lmt': datetime.datetime(2017, 9, 14, 15, 54, 14, 371000)}
+[2017-09-14 15:54:24,473] gnrs_db.py [line:33] INFO: Update {'guid': '61d71ca4b8d6a93780bc0452cc45ae9d666f3df7'}item in GUID_NA_tbl
+[2017-09-14 15:54:36,593] gnrs_db.py [line:37] INFO: Find {'guid': '61d71ca4b8d6a93780bc0452cc45ae9d666f3df7'} item in GUID_NA_tbl, result is {'_id': ObjectId('59ba35a63a2553700cfb2c2e'), 'guid': '61d71ca4b8d6a93780bc0452cc45ae9d666f3df7', 'nas': "['192.168.0.0', '192.168.0.1']", 'lmt': datetime.datetime(2017, 9, 14, 15, 54, 24, 470000)}
+[2017-09-14 15:54:43,912] gnrs_db.py [line:37] INFO: Find {'guid': '2'} item in GUID_NA_tbl, result is None
+[2017-09-15 08:57:51,460] dbtool.py [line:20] INFO: Get connection client.
+[2017-09-15 08:57:51,461] dbtool.py [line:22] INFO: Get database: ncs
+[2017-09-15 08:57:51,461] ncs_http_server.py [line:85] INFO: Starting server at :127.0.0.1:12701
+[2017-09-15 08:57:51,464] ncs_http_server.py [line:88] INFO: Running server...
+[2017-09-15 08:58:52,459] dbtool.py [line:37] INFO: Find {'hrn': 'lijq'} item in NCS_tbl, result is None
+[2017-09-15 08:58:52,460] dbtool.py [line:28] INFO: Add new item: {'hrn': 'lijq', 'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'type': '1', 'lmt': datetime.datetime(2017, 9, 15, 8, 58, 52, 459378), '_id': ObjectId('59bb25cc3a2553567c86929d')} to NCS_tbl
+[2017-09-15 09:01:06,212] dbtool.py [line:20] INFO: Get connection client.
+[2017-09-15 09:01:06,212] dbtool.py [line:22] INFO: Get database: ncs
+[2017-09-15 09:01:06,212] ncs_http_server.py [line:86] INFO: Starting server at :127.0.0.1:12701
+[2017-09-15 09:01:06,216] ncs_http_server.py [line:89] INFO: Running server...
+[2017-09-15 09:01:24,057] dbtool.py [line:20] INFO: Get connection client.
+[2017-09-15 09:01:24,057] dbtool.py [line:22] INFO: Get database: ncs
+[2017-09-15 09:01:24,058] ncs_http_server.py [line:86] INFO: Starting server at :127.0.0.1:12701
+[2017-09-15 09:01:24,061] ncs_http_server.py [line:89] INFO: Running server...
+[2017-09-15 09:01:25,964] dbtool.py [line:37] INFO: Find {'hrn': 'lijq'} item in NCS_tbl, result is {'_id': ObjectId('59bb25cc3a2553567c86929d'), 'hrn': 'lijq', 'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'type': '1', 'lmt': datetime.datetime(2017, 9, 15, 8, 58, 52, 459000)}
+[2017-09-15 09:01:37,467] dbtool.py [line:37] INFO: Find {'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e'} item in NCS_tbl, result is {'_id': ObjectId('59bb25cc3a2553567c86929d'), 'hrn': 'lijq', 'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'type': '1', 'lmt': datetime.datetime(2017, 9, 15, 8, 58, 52, 459000)}
+[2017-09-15 09:03:37,089] dbtool.py [line:20] INFO: Get connection client.
+[2017-09-15 09:03:37,089] dbtool.py [line:22] INFO: Get database: ncs
+[2017-09-15 09:03:37,090] ncs_socket_server.py [line:81] INFO: Server socket bind to 127.0.0.1:12701
+[2017-09-15 09:03:37,090] ncs_socket_server.py [line:83] INFO: Start listening
+[2017-09-15 09:03:37,090] ncs_socket_server.py [line:85] INFO: Waiting for connect...
+[2017-09-15 09:19:53,796] dbtool.py [line:20] INFO: Get connection client.
+[2017-09-15 09:19:53,796] dbtool.py [line:22] INFO: Get database: ncs
+[2017-09-15 09:19:53,796] ncs_socket_server.py [line:81] INFO: Server socket bind to 127.0.0.1:12701
+[2017-09-15 09:19:53,796] ncs_socket_server.py [line:83] INFO: Start listening
+[2017-09-15 09:19:53,796] ncs_socket_server.py [line:85] INFO: Waiting for connect...
+[2017-09-15 09:20:20,634] ncs_socket_client.py [line:13] INFO: Connect to server 127.0.0.1:12701
+[2017-09-15 09:20:20,634] ncs_socket_server.py [line:87] INFO: Connect to client ('127.0.0.1', 64998)
+[2017-09-15 09:20:20,634] ncs_socket_client.py [line:15] INFO: Request: GETGUID###lijqphone###phone has been sent.
+[2017-09-15 09:20:20,634] ncs_socket_server.py [line:85] INFO: Waiting for connect...
+[2017-09-15 09:20:20,646] dbtool.py [line:37] INFO: Find {'hrn': 'lijqphone'} item in NCS_tbl, result is None
+[2017-09-15 09:20:20,646] dbtool.py [line:28] INFO: Add new item: {'guid': 'b5193dc017ea5fecab798c2678e400230b1c9ada', 'hrn': 'lijqphone', 'type': 'phone', 'lmt': datetime.datetime(2017, 9, 15, 9, 20, 20, 646382), '_id': ObjectId('59bb2ad43a2553736c574674')} to NCS_tbl
+[2017-09-15 09:20:20,647] ncs_socket_server.py [line:75] INFO: Socket: ('127.0.0.1', 64998) has been closed.
+[2017-09-15 09:20:20,647] ncs_socket_client.py [line:17] INFO: Reply is: OK###b5193dc017ea5fecab798c2678e400230b1c9ada
+[2017-09-15 09:20:20,647] ncs_socket_client.py [line:23] INFO: Socket: ('127.0.0.1', 64998) has been closed.
+[2017-09-15 09:20:20,647] ncs_socket_client.py [line:13] INFO: Connect to server 127.0.0.1:12701
+[2017-09-15 09:20:20,648] ncs_socket_server.py [line:87] INFO: Connect to client ('127.0.0.1', 65000)
+[2017-09-15 09:20:20,648] ncs_socket_client.py [line:15] INFO: Request: QUERYGUID###lijqphone has been sent.
+[2017-09-15 09:20:20,648] ncs_socket_server.py [line:85] INFO: Waiting for connect...
+[2017-09-15 09:20:20,649] dbtool.py [line:37] INFO: Find {'hrn': 'lijqphone'} item in NCS_tbl, result is {'_id': ObjectId('59bb2ad43a2553736c574674'), 'guid': 'b5193dc017ea5fecab798c2678e400230b1c9ada', 'hrn': 'lijqphone', 'type': 'phone', 'lmt': datetime.datetime(2017, 9, 15, 9, 20, 20, 646000)}
+[2017-09-15 09:20:20,649] ncs_socket_client.py [line:17] INFO: Reply is: OK###b5193dc017ea5fecab798c2678e400230b1c9ada
+[2017-09-15 09:20:20,649] ncs_socket_server.py [line:75] INFO: Socket: ('127.0.0.1', 65000) has been closed.
+[2017-09-15 09:20:20,649] ncs_socket_client.py [line:23] INFO: Socket: ('127.0.0.1', 65000) has been closed.
+[2017-09-15 09:20:20,649] ncs_socket_client.py [line:13] INFO: Connect to server 127.0.0.1:12701
+[2017-09-15 09:20:20,649] ncs_socket_server.py [line:87] INFO: Connect to client ('127.0.0.1', 65001)
+[2017-09-15 09:20:20,650] ncs_socket_client.py [line:15] INFO: Request: QUERYHRN###b5193dc017ea5fecab798c2678e400230b1c9ada has been sent.
+[2017-09-15 09:20:20,650] ncs_socket_server.py [line:85] INFO: Waiting for connect...
+[2017-09-15 09:20:20,650] dbtool.py [line:37] INFO: Find {'guid': 'b5193dc017ea5fecab798c2678e400230b1c9ada'} item in NCS_tbl, result is {'_id': ObjectId('59bb2ad43a2553736c574674'), 'guid': 'b5193dc017ea5fecab798c2678e400230b1c9ada', 'hrn': 'lijqphone', 'type': 'phone', 'lmt': datetime.datetime(2017, 9, 15, 9, 20, 20, 646000)}
+[2017-09-15 09:20:20,651] ncs_socket_client.py [line:17] INFO: Reply is: OK###lijqphone
+[2017-09-15 09:20:20,651] ncs_socket_server.py [line:75] INFO: Socket: ('127.0.0.1', 65001) has been closed.
+[2017-09-15 09:20:20,651] ncs_socket_client.py [line:23] INFO: Socket: ('127.0.0.1', 65001) has been closed.
+[2017-09-15 09:20:20,651] ncs_socket_client.py [line:13] INFO: Connect to server 127.0.0.1:12701
+[2017-09-15 09:20:20,651] ncs_socket_server.py [line:87] INFO: Connect to client ('127.0.0.1', 65002)
+[2017-09-15 09:20:20,651] ncs_socket_client.py [line:15] INFO: Request: QUERYTYPE###b5193dc017ea5fecab798c2678e400230b1c9ada has been sent.
+[2017-09-15 09:20:20,651] ncs_socket_server.py [line:85] INFO: Waiting for connect...
+[2017-09-15 09:20:20,652] dbtool.py [line:37] INFO: Find {'guid': 'b5193dc017ea5fecab798c2678e400230b1c9ada'} item in NCS_tbl, result is {'_id': ObjectId('59bb2ad43a2553736c574674'), 'guid': 'b5193dc017ea5fecab798c2678e400230b1c9ada', 'hrn': 'lijqphone', 'type': 'phone', 'lmt': datetime.datetime(2017, 9, 15, 9, 20, 20, 646000)}
+[2017-09-15 09:20:20,652] ncs_socket_client.py [line:17] INFO: Reply is: OK###phone
+[2017-09-15 09:20:20,652] ncs_socket_server.py [line:75] INFO: Socket: ('127.0.0.1', 65002) has been closed.
+[2017-09-15 09:20:20,653] ncs_socket_client.py [line:23] INFO: Socket: ('127.0.0.1', 65002) has been closed.
+[2017-09-15 09:20:20,653] ncs_socket_client.py [line:13] INFO: Connect to server 127.0.0.1:12701
+[2017-09-15 09:20:20,653] ncs_socket_server.py [line:87] INFO: Connect to client ('127.0.0.1', 65003)
+[2017-09-15 09:20:20,653] ncs_socket_client.py [line:15] INFO: Request: GETGUID###lijqphone###phone has been sent.
+[2017-09-15 09:20:20,653] ncs_socket_server.py [line:85] INFO: Waiting for connect...
+[2017-09-15 09:20:20,654] dbtool.py [line:37] INFO: Find {'hrn': 'lijqphone'} item in NCS_tbl, result is {'_id': ObjectId('59bb2ad43a2553736c574674'), 'guid': 'b5193dc017ea5fecab798c2678e400230b1c9ada', 'hrn': 'lijqphone', 'type': 'phone', 'lmt': datetime.datetime(2017, 9, 15, 9, 20, 20, 646000)}
+[2017-09-15 09:20:20,654] ncs_socket_client.py [line:17] INFO: Reply is: NO
+[2017-09-15 09:20:20,654] ncs_socket_server.py [line:75] INFO: Socket: ('127.0.0.1', 65003) has been closed.
+[2017-09-15 09:20:20,655] ncs_socket_client.py [line:23] INFO: Socket: ('127.0.0.1', 65003) has been closed.
+[2017-09-15 09:20:20,655] ncs_socket_client.py [line:13] INFO: Connect to server 127.0.0.1:12701
+[2017-09-15 09:20:20,655] ncs_socket_server.py [line:87] INFO: Connect to client ('127.0.0.1', 65004)
+[2017-09-15 09:20:20,655] ncs_socket_client.py [line:15] INFO: Request: QUERYTYPE###123 has been sent.
+[2017-09-15 09:20:20,655] ncs_socket_server.py [line:85] INFO: Waiting for connect...
+[2017-09-15 09:20:20,656] dbtool.py [line:37] INFO: Find {'guid': '123'} item in NCS_tbl, result is None
+[2017-09-15 09:20:20,656] ncs_socket_client.py [line:17] INFO: Reply is: NO
+[2017-09-15 09:20:20,656] ncs_socket_server.py [line:75] INFO: Socket: ('127.0.0.1', 65004) has been closed.
+[2017-09-15 09:20:20,656] ncs_socket_client.py [line:23] INFO: Socket: ('127.0.0.1', 65004) has been closed.
+[2017-09-15 09:20:20,656] ncs_socket_client.py [line:13] INFO: Connect to server 127.0.0.1:12701
+[2017-09-15 09:20:20,656] ncs_socket_server.py [line:87] INFO: Connect to client ('127.0.0.1', 65005)
+[2017-09-15 09:20:20,657] ncs_socket_client.py [line:15] INFO: Request: QUERYHRN###123 has been sent.
+[2017-09-15 09:20:20,657] ncs_socket_server.py [line:85] INFO: Waiting for connect...
+[2017-09-15 09:20:20,657] dbtool.py [line:37] INFO: Find {'guid': '123'} item in NCS_tbl, result is None
+[2017-09-15 09:20:20,657] ncs_socket_client.py [line:17] INFO: Reply is: NO
+[2017-09-15 09:20:20,657] ncs_socket_server.py [line:75] INFO: Socket: ('127.0.0.1', 65005) has been closed.
+[2017-09-15 09:20:20,658] ncs_socket_client.py [line:23] INFO: Socket: ('127.0.0.1', 65005) has been closed.
+[2017-09-15 09:20:20,658] ncs_socket_client.py [line:13] INFO: Connect to server 127.0.0.1:12701
+[2017-09-15 09:20:20,658] ncs_socket_server.py [line:87] INFO: Connect to client ('127.0.0.1', 65006)
+[2017-09-15 09:20:20,658] ncs_socket_client.py [line:15] INFO: Request: QUERYGUID###123 has been sent.
+[2017-09-15 09:20:20,658] ncs_socket_server.py [line:85] INFO: Waiting for connect...
+[2017-09-15 09:20:20,659] dbtool.py [line:37] INFO: Find {'hrn': '123'} item in NCS_tbl, result is None
+[2017-09-15 09:20:20,659] ncs_socket_client.py [line:17] INFO: Reply is: NO
+[2017-09-15 09:20:20,659] ncs_socket_server.py [line:75] INFO: Socket: ('127.0.0.1', 65006) has been closed.
+[2017-09-15 09:20:20,659] ncs_socket_client.py [line:23] INFO: Socket: ('127.0.0.1', 65006) has been closed.
+[2017-09-15 09:38:40,611] dbtool.py [line:20] INFO: Get connection client.
+[2017-09-15 09:38:40,612] dbtool.py [line:22] INFO: Get database: gnrs
+[2017-09-15 09:38:40,612] gnrs_socket_server.py [line:61] INFO: Server socket bind to 127.0.0.1:12700
+[2017-09-15 09:38:40,612] gnrs_socket_server.py [line:63] INFO: Start listening
+[2017-09-15 09:38:40,612] gnrs_socket_server.py [line:65] INFO: Waiting for connect...
+[2017-09-15 09:40:33,645] gnrs_socket_client.py [line:18] ERROR: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2017-09-15 09:40:33,645] gnrs_socket_client.py [line:22] INFO: Socket: ('0.0.0.0', 65028) has been closed.
+[2017-09-15 09:40:34,646] gnrs_socket_client.py [line:18] ERROR: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2017-09-15 09:40:34,646] gnrs_socket_client.py [line:22] INFO: Socket: ('0.0.0.0', 65029) has been closed.
+[2017-09-15 09:40:35,647] gnrs_socket_client.py [line:18] ERROR: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2017-09-15 09:40:35,647] gnrs_socket_client.py [line:22] INFO: Socket: ('0.0.0.0', 65030) has been closed.
+[2017-09-15 09:40:36,648] gnrs_socket_client.py [line:18] ERROR: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2017-09-15 09:40:36,648] gnrs_socket_client.py [line:22] INFO: Socket: ('0.0.0.0', 65031) has been closed.
+[2017-09-15 09:40:37,651] gnrs_socket_client.py [line:18] ERROR: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2017-09-15 09:40:37,651] gnrs_socket_client.py [line:22] INFO: Socket: ('0.0.0.0', 65032) has been closed.
+[2017-09-15 09:40:49,981] gnrs_socket_client.py [line:12] INFO: Connect to server 127.0.0.1:12700
+[2017-09-15 09:40:49,981] gnrs_socket_client.py [line:14] INFO: Request: QUERY###111 has been sent.
+[2017-09-15 09:40:49,981] gnrs_socket_server.py [line:67] INFO: Connect to client ('127.0.0.1', 65034)
+[2017-09-15 09:40:49,981] gnrs_socket_server.py [line:65] INFO: Waiting for connect...
+[2017-09-15 09:40:49,986] dbtool.py [line:37] INFO: Find {'guid': '111'} item in GUID_NA_tbl, result is None
+[2017-09-15 09:40:49,987] gnrs_socket_client.py [line:16] INFO: Reply is: NO
+[2017-09-15 09:40:49,987] gnrs_socket_server.py [line:55] INFO: Socket: ('127.0.0.1', 65034) has been closed.
+[2017-09-15 09:40:49,987] gnrs_socket_client.py [line:22] INFO: Socket: ('127.0.0.1', 65034) has been closed.
+[2017-09-15 09:40:49,988] gnrs_socket_client.py [line:12] INFO: Connect to server 127.0.0.1:12700
+[2017-09-15 09:40:49,988] gnrs_socket_server.py [line:67] INFO: Connect to client ('127.0.0.1', 65036)
+[2017-09-15 09:40:49,988] gnrs_socket_client.py [line:14] INFO: Request: SIGNUP###123###1.1.1.1 has been sent.
+[2017-09-15 09:40:49,988] gnrs_socket_server.py [line:65] INFO: Waiting for connect...
+[2017-09-15 09:40:49,992] dbtool.py [line:37] INFO: Find {'guid': '123'} item in GUID_NA_tbl, result is None
+[2017-09-15 09:40:49,992] dbtool.py [line:28] INFO: Add new item: {'guid': '123', 'nas': "['1.1.1.1']", 'lmt': datetime.datetime(2017, 9, 15, 9, 40, 49, 992631), '_id': ObjectId('59bb2fa13a25535d9c00ae42')} to GUID_NA_tbl
+[2017-09-15 09:40:49,993] gnrs_socket_client.py [line:16] INFO: Reply is: OK
+[2017-09-15 09:40:49,993] gnrs_socket_server.py [line:55] INFO: Socket: ('127.0.0.1', 65036) has been closed.
+[2017-09-15 09:40:49,993] gnrs_socket_client.py [line:22] INFO: Socket: ('127.0.0.1', 65036) has been closed.
+[2017-09-15 09:40:49,993] gnrs_socket_client.py [line:12] INFO: Connect to server 127.0.0.1:12700
+[2017-09-15 09:40:49,993] gnrs_socket_server.py [line:67] INFO: Connect to client ('127.0.0.1', 65037)
+[2017-09-15 09:40:49,993] gnrs_socket_client.py [line:14] INFO: Request: SIGNUP###123###1.1.1.1 has been sent.
+[2017-09-15 09:40:49,993] gnrs_socket_server.py [line:65] INFO: Waiting for connect...
+[2017-09-15 09:40:49,997] dbtool.py [line:37] INFO: Find {'guid': '123'} item in GUID_NA_tbl, result is {'_id': ObjectId('59bb2fa13a25535d9c00ae42'), 'guid': '123', 'nas': "['1.1.1.1']", 'lmt': datetime.datetime(2017, 9, 15, 9, 40, 49, 992000)}
+[2017-09-15 09:40:49,997] gnrs_socket_client.py [line:16] INFO: Reply is: OK
+[2017-09-15 09:40:49,997] gnrs_socket_server.py [line:55] INFO: Socket: ('127.0.0.1', 65037) has been closed.
+[2017-09-15 09:40:49,998] gnrs_socket_client.py [line:22] INFO: Socket: ('127.0.0.1', 65037) has been closed.
+[2017-09-15 09:40:49,998] gnrs_socket_client.py [line:12] INFO: Connect to server 127.0.0.1:12700
+[2017-09-15 09:40:49,998] gnrs_socket_server.py [line:67] INFO: Connect to client ('127.0.0.1', 65038)
+[2017-09-15 09:40:49,998] gnrs_socket_client.py [line:14] INFO: Request: QUERY###123 has been sent.
+[2017-09-15 09:40:49,998] gnrs_socket_server.py [line:65] INFO: Waiting for connect...
+[2017-09-15 09:40:50,002] dbtool.py [line:37] INFO: Find {'guid': '123'} item in GUID_NA_tbl, result is {'_id': ObjectId('59bb2fa13a25535d9c00ae42'), 'guid': '123', 'nas': "['1.1.1.1']", 'lmt': datetime.datetime(2017, 9, 15, 9, 40, 49, 992000)}
+[2017-09-15 09:40:50,003] gnrs_socket_client.py [line:16] INFO: Reply is: OK###['1.1.1.1']
+[2017-09-15 09:40:50,003] gnrs_socket_server.py [line:55] INFO: Socket: ('127.0.0.1', 65038) has been closed.
+[2017-09-15 09:40:50,003] gnrs_socket_client.py [line:22] INFO: Socket: ('127.0.0.1', 65038) has been closed.
+[2017-09-15 09:40:50,003] gnrs_socket_client.py [line:12] INFO: Connect to server 127.0.0.1:12700
+[2017-09-15 09:40:50,003] gnrs_socket_server.py [line:67] INFO: Connect to client ('127.0.0.1', 65039)
+[2017-09-15 09:40:50,003] gnrs_socket_client.py [line:14] INFO: Request: SIGNUP###123###2.2.2.2 has been sent.
+[2017-09-15 09:40:50,004] gnrs_socket_server.py [line:65] INFO: Waiting for connect...
+[2017-09-15 09:40:50,007] dbtool.py [line:37] INFO: Find {'guid': '123'} item in GUID_NA_tbl, result is {'_id': ObjectId('59bb2fa13a25535d9c00ae42'), 'guid': '123', 'nas': "['1.1.1.1']", 'lmt': datetime.datetime(2017, 9, 15, 9, 40, 49, 992000)}
+[2017-09-15 09:40:50,011] dbtool.py [line:33] INFO: Update {'guid': '123'}item in GUID_NA_tbl
+[2017-09-15 09:40:50,012] gnrs_socket_server.py [line:55] INFO: Socket: ('127.0.0.1', 65039) has been closed.
+[2017-09-15 09:40:50,011] gnrs_socket_client.py [line:16] INFO: Reply is: OK
+[2017-09-15 09:40:50,012] gnrs_socket_client.py [line:22] INFO: Socket: ('127.0.0.1', 65039) has been closed.
+[2017-09-15 09:40:50,012] gnrs_socket_client.py [line:12] INFO: Connect to server 127.0.0.1:12700
+[2017-09-15 09:40:50,012] gnrs_socket_server.py [line:67] INFO: Connect to client ('127.0.0.1', 65040)
+[2017-09-15 09:40:50,012] gnrs_socket_server.py [line:65] INFO: Waiting for connect...
+[2017-09-15 09:40:50,016] dbtool.py [line:37] INFO: Find {'guid': '123'} item in GUID_NA_tbl, result is {'_id': ObjectId('59bb2fa13a25535d9c00ae42'), 'guid': '123', 'nas': "['1.1.1.1', '2.2.2.2']", 'lmt': datetime.datetime(2017, 9, 15, 9, 40, 50, 8000)}
+[2017-09-15 09:40:50,016] gnrs_socket_client.py [line:16] INFO: Reply is: OK###['1.1.1.1', '2.2.2.2']
+[2017-09-15 09:40:50,016] gnrs_socket_server.py [line:55] INFO: Socket: ('127.0.0.1', 65040) has been closed.
+[2017-09-15 09:40:50,017] gnrs_socket_client.py [line:22] INFO: Socket: ('127.0.0.1', 65040) has been closed.
+[2017-09-15 09:53:48,885] dbtool.py [line:20] INFO: Get connection client.
+[2017-09-15 09:53:48,885] dbtool.py [line:22] INFO: Get database: GWmapping
+[2017-09-15 09:53:49,094] dbtool.py [line:28] INFO: Add new item: {'hrn': 'lijqphone', 'luid': '7ee3', 'lmt': datetime.datetime(2017, 9, 15, 9, 53, 48, 886460), '_id': ObjectId('59bb32ac3a255364f09f245d')} to ID_LUID_tbl
+[2017-09-15 09:53:49,205] dbtool.py [line:28] INFO: Add new item: {'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'na': '192.168.100.149', 'lmt': datetime.datetime(2017, 9, 15, 9, 53, 49, 95516), '_id': ObjectId('59bb32ad3a255364f09f245e')} to GUID_NA_tbl
+[2017-09-15 09:53:49,304] dbtool.py [line:28] INFO: Add new item: {'luid': '7ee3', 'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'lmt': datetime.datetime(2017, 9, 15, 9, 53, 49, 205416), '_id': ObjectId('59bb32ad3a255364f09f245f')} to LUID_GUID_tbl
+[2017-09-15 09:53:49,305] dbtool.py [line:37] INFO: Find {'luid': '7ee3'} item in LUID_GUID_tbl, result is {'_id': ObjectId('59bb32ad3a255364f09f245f'), 'luid': '7ee3', 'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'lmt': datetime.datetime(2017, 9, 15, 9, 53, 49, 205000)}
+[2017-09-15 09:53:49,305] gateway_mapping_demo.py [line:26] INFO: Query luid: 7ee3, its guid is {'_id': ObjectId('59bb32ad3a255364f09f245f'), 'luid': '7ee3', 'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'lmt': datetime.datetime(2017, 9, 15, 9, 53, 49, 205000)}
+[2017-09-15 09:53:49,306] dbtool.py [line:33] INFO: Update {'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e'}item in GUID_NA_tbl
+[2017-09-15 09:53:49,306] dbtool.py [line:42] INFO: Find all {} item in LUID_GUID_tbl, result is <pymongo.cursor.Cursor object at 0x02F751D0>
+[2017-09-15 09:53:49,306] gateway_mapping_demo.py [line:34] INFO: {'_id': ObjectId('59bb32ad3a255364f09f245f'), 'luid': '7ee3', 'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'lmt': datetime.datetime(2017, 9, 15, 9, 53, 49, 205000)}
+[2017-09-15 09:53:58,908] dbtool.py [line:20] INFO: Get connection client.
+[2017-09-15 09:53:58,908] dbtool.py [line:22] INFO: Get database: GWmapping
+[2017-09-15 09:53:58,910] dbtool.py [line:28] INFO: Add new item: {'hrn': 'lijqphone', 'luid': '7ee3', 'lmt': datetime.datetime(2017, 9, 15, 9, 53, 58, 908972), '_id': ObjectId('59bb32b63a2553639cbbff28')} to ID_LUID_tbl
+[2017-09-15 09:53:58,911] dbtool.py [line:28] INFO: Add new item: {'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'na': '192.168.100.149', 'lmt': datetime.datetime(2017, 9, 15, 9, 53, 58, 910966), '_id': ObjectId('59bb32b63a2553639cbbff29')} to GUID_NA_tbl
+[2017-09-15 09:53:58,911] dbtool.py [line:28] INFO: Add new item: {'luid': '7ee3', 'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'lmt': datetime.datetime(2017, 9, 15, 9, 53, 58, 911979), '_id': ObjectId('59bb32b63a2553639cbbff2a')} to LUID_GUID_tbl
+[2017-09-15 09:53:58,912] dbtool.py [line:37] INFO: Find {'luid': '7ee3'} item in LUID_GUID_tbl, result is {'_id': ObjectId('59bb32ad3a255364f09f245f'), 'luid': '7ee3', 'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'lmt': datetime.datetime(2017, 9, 15, 9, 53, 49, 205000)}
+[2017-09-15 09:53:58,912] gateway_mapping_demo.py [line:26] INFO: Query luid: 7ee3, its guid is {'_id': ObjectId('59bb32ad3a255364f09f245f'), 'luid': '7ee3', 'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'lmt': datetime.datetime(2017, 9, 15, 9, 53, 49, 205000)}
+[2017-09-15 09:53:58,913] dbtool.py [line:33] INFO: Update {'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e'}item in GUID_NA_tbl
+[2017-09-15 09:53:58,913] dbtool.py [line:42] INFO: Find all {} item in LUID_GUID_tbl, result is <pymongo.cursor.Cursor object at 0x02F751D0>
+[2017-09-15 09:53:58,913] gateway_mapping_demo.py [line:34] INFO: {'_id': ObjectId('59bb32ad3a255364f09f245f'), 'luid': '7ee3', 'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'lmt': datetime.datetime(2017, 9, 15, 9, 53, 49, 205000)}
+[2017-09-15 09:53:58,913] gateway_mapping_demo.py [line:34] INFO: {'_id': ObjectId('59bb32b63a2553639cbbff2a'), 'luid': '7ee3', 'guid': '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'lmt': datetime.datetime(2017, 9, 15, 9, 53, 58, 911000)}
+[2017-09-15 09:53:58,914] dbtool.py [line:47] INFO: Remove item{'hrn': 'lijqphone'} item from ID_LUID_tbl
+[2017-09-15 09:53:58,914] dbtool.py [line:51] INFO: Remove all data from LUID_GUID_tbl
+[2017-09-15 09:53:58,915] dbtool.py [line:55] INFO: Close db connection.
+[2017-09-15 09:53:58,915] gateway_mapping_demo.py [line:43] INFO: Close db connection.
