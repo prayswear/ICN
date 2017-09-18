@@ -263,3 +263,46 @@
 [2017-09-15 09:53:58,914] dbtool.py [line:51] INFO: Remove all data from LUID_GUID_tbl
 [2017-09-15 09:53:58,915] dbtool.py [line:55] INFO: Close db connection.
 [2017-09-15 09:53:58,915] gateway_mapping_demo.py [line:43] INFO: Close db connection.
+[2017-09-18 10:46:54,836] dbtool.py [line:20] INFO: Get connection client.
+[2017-09-18 10:46:54,845] dbtool.py [line:22] INFO: Get database: ncs
+[2017-09-18 10:46:54,845] dbtool.py [line:42] INFO: Find all {} item in NCS_tbl, result is <pymongo.cursor.Cursor object at 0x02F73BD0>
+[2017-09-18 10:47:12,339] dbtool.py [line:20] INFO: Get connection client.
+[2017-09-18 10:47:12,339] dbtool.py [line:22] INFO: Get database: ncs
+[2017-09-18 10:47:12,339] dbtool.py [line:42] INFO: Find all {} item in NCS_tbl, result is <pymongo.cursor.Cursor object at 0x02F73D50>
+[2017-09-18 10:50:49,282] dbtool.py [line:20] INFO: Get connection client.
+[2017-09-18 10:50:49,282] dbtool.py [line:22] INFO: Get database: ncs
+[2017-09-18 10:50:49,283] ncs_socket_server.py [line:94] INFO: Server socket bind to 127.0.0.1:12701
+[2017-09-18 10:50:49,283] ncs_socket_server.py [line:96] INFO: Start listening
+[2017-09-18 10:50:49,283] ncs_socket_server.py [line:98] INFO: Waiting for connect...
+[2017-09-18 10:50:53,736] ncs_socket_client.py [line:14] INFO: Connect to server 127.0.0.1:12701
+[2017-09-18 10:50:53,736] ncs_socket_server.py [line:100] INFO: Connect to client ('127.0.0.1', 56376)
+[2017-09-18 10:50:53,736] ncs_socket_client.py [line:16] INFO: Request: QUERYALL### has been sent.
+[2017-09-18 10:50:53,736] ncs_socket_server.py [line:98] INFO: Waiting for connect...
+[2017-09-18 10:50:53,736] dbtool.py [line:42] INFO: Find all {} item in NCS_tbl, result is <pymongo.cursor.Cursor object at 0x03D03D90>
+[2017-09-18 10:50:53,748] ncs_socket_client.py [line:18] INFO: Reply is: OK###['61d71ca4b8d6a93780bc0452cc45ae9d666f3df7', '343e8f6ba1adb66ef2f98b288ea0c403c7a64c82', '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'b5193dc017ea5fecab798c2678e400230b1c9ada']
+[2017-09-18 10:50:53,748] ncs_socket_server.py [line:88] INFO: Socket: ('127.0.0.1', 56376) has been closed.
+[2017-09-18 10:50:53,748] ncs_socket_client.py [line:24] INFO: Socket: ('127.0.0.1', 56376) has been closed.
+[2017-09-18 10:51:11,163] ncs_socket_client.py [line:14] INFO: Connect to server 127.0.0.1:12701
+[2017-09-18 10:51:11,163] ncs_socket_server.py [line:100] INFO: Connect to client ('127.0.0.1', 56380)
+[2017-09-18 10:51:11,163] ncs_socket_client.py [line:16] INFO: Request: QUERYALL### has been sent.
+[2017-09-18 10:51:11,163] ncs_socket_server.py [line:98] INFO: Waiting for connect...
+[2017-09-18 10:51:11,164] dbtool.py [line:42] INFO: Find all {} item in NCS_tbl, result is <pymongo.cursor.Cursor object at 0x03D03FD0>
+[2017-09-18 10:51:11,164] ncs_socket_client.py [line:18] INFO: Reply is: OK###['61d71ca4b8d6a93780bc0452cc45ae9d666f3df7', '343e8f6ba1adb66ef2f98b288ea0c403c7a64c82', '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'b5193dc017ea5fecab798c2678e400230b1c9ada']
+[2017-09-18 10:51:11,164] ncs_socket_server.py [line:88] INFO: Socket: ('127.0.0.1', 56380) has been closed.
+[2017-09-18 10:51:11,165] ncs_socket_client.py [line:24] INFO: Socket: ('127.0.0.1', 56380) has been closed.
+[2017-09-18 10:51:28,394] ncs_socket_client.py [line:14] INFO: Connect to server 127.0.0.1:12701
+[2017-09-18 10:51:28,394] ncs_socket_server.py [line:100] INFO: Connect to client ('127.0.0.1', 56383)
+[2017-09-18 10:51:28,394] ncs_socket_client.py [line:16] INFO: Request: QUERYALL### has been sent.
+[2017-09-18 10:51:28,394] ncs_socket_server.py [line:98] INFO: Waiting for connect...
+[2017-09-18 10:51:28,394] dbtool.py [line:42] INFO: Find all {} item in NCS_tbl, result is <pymongo.cursor.Cursor object at 0x03D03DD0>
+[2017-09-18 10:51:28,395] ncs_socket_client.py [line:18] INFO: Reply is: OK###['61d71ca4b8d6a93780bc0452cc45ae9d666f3df7', '343e8f6ba1adb66ef2f98b288ea0c403c7a64c82', '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'b5193dc017ea5fecab798c2678e400230b1c9ada']
+[2017-09-18 10:51:28,395] ncs_socket_server.py [line:88] INFO: Socket: ('127.0.0.1', 56383) has been closed.
+[2017-09-18 10:51:28,395] ncs_socket_client.py [line:24] INFO: Socket: ('127.0.0.1', 56383) has been closed.
+[2017-09-18 10:51:50,812] ncs_socket_client.py [line:14] INFO: Connect to server 127.0.0.1:12701
+[2017-09-18 10:51:50,813] ncs_socket_server.py [line:100] INFO: Connect to client ('127.0.0.1', 56386)
+[2017-09-18 10:51:50,813] ncs_socket_client.py [line:16] INFO: Request: QUERYALL### has been sent.
+[2017-09-18 10:51:50,813] ncs_socket_server.py [line:98] INFO: Waiting for connect...
+[2017-09-18 10:51:50,813] dbtool.py [line:42] INFO: Find all {} item in NCS_tbl, result is <pymongo.cursor.Cursor object at 0x03D03FB0>
+[2017-09-18 10:51:50,814] ncs_socket_client.py [line:18] INFO: Reply is: OK###['61d71ca4b8d6a93780bc0452cc45ae9d666f3df7', '343e8f6ba1adb66ef2f98b288ea0c403c7a64c82', '7ee30ed78da46257a17047254b7d6a4bbf6bc01e', 'b5193dc017ea5fecab798c2678e400230b1c9ada']
+[2017-09-18 10:51:50,814] ncs_socket_server.py [line:88] INFO: Socket: ('127.0.0.1', 56386) has been closed.
+[2017-09-18 10:51:50,814] ncs_socket_client.py [line:24] INFO: Socket: ('127.0.0.1', 56386) has been closed.

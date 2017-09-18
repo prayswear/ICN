@@ -28,6 +28,7 @@ def sign_up_handler(request):
     return True
 
 
+
 def query_handler(request):
     guid = request.split('###')[1]
     result = mydb.query('GUID_NA_tbl', {'guid': guid})

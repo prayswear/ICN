@@ -44,6 +44,18 @@ def query_guid(request):
         reply = 'NO'
     return reply
 
+def query_all(request):
+    result=mydb.query_all('NCS_tbl',{})
+    if result==None:
+        return 'NO'
+    guid_list = []
+    for i in result:
+        guid_list.append(i['guid'])
+    reply='OK###'+str(guid_list)
+    return reply
+
+
+
 
 def query_type(request):
     # request is like QUERYtype###guid
@@ -67,6 +79,8 @@ def client_handler(client_socket, address):
         reply = query_guid(request)
     elif request.startswith('QUERYTYPE###'):
         reply = query_type(request)
+    elif request.startswith('QUERYALL###'):
+        reply=query_all(request)
     else:
         reply = 'NO'
     client_socket.send(reply.encode('utf-8'))
@@ -91,5 +105,6 @@ if __name__ == '__main__':
     ncs_ip, ncs_port = '127.0.0.1', 12701
     db_ip, db_port = '127.0.0.1', 27017
     mydb = dbtool.myDB(db_ip, db_port, 'ncs')
+    # print(query_all('QUERYALL###'))
     # mydb.remove_all('GUID_NA_tbl')
     start_server()
