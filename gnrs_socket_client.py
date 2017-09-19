@@ -31,6 +31,15 @@ def sign_up(guid, na):
     else:
         return False
 
+def guid_update(guid,oldna,newna):
+    request='GUIDUPDATE###'+guid+'###'+oldna+'###'+newna
+    reply=request_for_reply(request)
+    if reply.startswith('OK'):
+        return True
+    else:
+        return False
+
+
 
 def query(guid):
     request = 'QUERY###' + guid

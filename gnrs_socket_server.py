@@ -12,12 +12,12 @@ logger = logging.getLogger('myLogger')
 def sign_up_handler(request):
     guid = request.split('###')[1]
     na = request.split('###')[2]
-    nas = mydb.query('GUID_NA_tbl', {'guid': guid})
-    if nas == None:
+    result = mydb.query('GUID_NA_tbl', {'guid': guid})
+    if result == None:
         item = {'guid': guid, 'nas': str([na])}
         mydb.add('GUID_NA_tbl', item)
     else:
-        nas_temp = list(eval(nas['nas']))
+        nas_temp = list(eval(result['nas']))
         flag = True
         for i in nas_temp:
             if na == i:
@@ -27,6 +27,23 @@ def sign_up_handler(request):
             mydb.update('GUID_NA_tbl', {'guid': guid}, {'nas': str(nas_temp)})
     return True
 
+
+def guid_update(request):
+    guid = request.split('###')[1]
+    oldna = request.split('###')[2]
+    newna = request.split('###')[3]
+    result = mydb.query('GUID_NA_tbl', {'guid': guid})
+    if result == None:
+        item = {'guid': guid, 'nas': str([newna])}
+        mydb.add('GUID_NA_tbl', item)
+    else:
+        nas_temp = list(eval(result['nas']))
+        for i in nas_temp:
+            if oldna == i:
+                nas_temp.remove(i)
+        nas_temp.append(newna)
+        mydb.update('GUID_NA_tbl', {'guid': guid}, {'nas': str(nas_temp)})
+    return 'OK'
 
 
 def query_handler(request):
@@ -49,6 +66,8 @@ def client_handler(client_socket, address):
             reply = 'NO'
     elif request.startswith('QUERY###'):
         reply = query_handler(request)
+    elif request.startswith('GUIDUPDATE###'):
+        reply = guid_update(request)
     else:
         reply = ''
     client_socket.send(reply.encode("utf-8"))
@@ -70,7 +89,7 @@ def start_server():
 
 
 if __name__ == '__main__':
-    gnrs_ip, gnrs_port = '127.0.0.1', 12700
+    gnrs_ip, gnrs_port = '192.168.46.101', 12700
     db_ip, db_port = '127.0.0.1', 27017
 
     mydb = dbtool.myDB(db_ip, db_port, 'gnrs')
