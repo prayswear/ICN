@@ -1,0 +1,881 @@
+[2017-09-20 10:09:04,961] packet.py [line:36] INFO: 
+###ICN PACKET###
+# src guid: 
+# dst_guid: 
+# src_na: 
+# dst_na: 
+# message type: GNRSMessageType.EMPTY
+# header length: 0
+# header checksum: 
+# payload: 
+[2017-09-20 10:10:16,018] packet.py [line:37] INFO: 
+###ICN PACKET###
+# src guid: 
+# dst_guid: 
+# src_na: 
+# dst_na: 
+# message type: GNRSMessageType.EMPTY
+# header length: 0
+# header checksum: 
+# payload: 
+##########
+[2017-09-20 10:10:30,241] packet.py [line:37] INFO: 
+###ICN PACKET###
+# src guid: 
+# dst_guid: 
+# src_na: 
+# dst_na: 
+# message type: GNRSMessageType.EMPTY
+# header length: 0
+# header checksum: 
+# payload: 
+##############
+[2017-09-20 10:10:30,391] packet.py [line:37] INFO: 
+###ICN PACKET###
+# src guid: 
+# dst_guid: 
+# src_na: 
+# dst_na: 
+# message type: GNRSMessageType.EMPTY
+# header length: 0
+# header checksum: 
+# payload: 
+##############
+[2017-09-20 10:10:37,093] packet.py [line:37] INFO: 
+###ICN PACKET###
+# src guid: 
+# dst_guid: 
+# src_na: 
+# dst_na: 
+# message type: GNRSMessageType.EMPTY
+# header length: 0
+# header checksum: 
+# payload: 
+###############
+[2017-09-20 10:10:58,106] packet.py [line:37] INFO: 
+###ICN PACKET###
+# src guid: 
+# dst_guid: 
+# src_na: 
+# dst_na: 
+# message type: GNRSMessageType.EMPTY
+# header length: 0
+# header checksum: 
+# payload: 
+################
+[2017-09-20 10:35:30,215] packet.py [line:42] INFO: 
+###ICN PACKET###
+# src guid: 
+# dst_guid: 
+# src_na: 
+# dst_na: 
+# message type: 
+# header length: 
+# header checksum: 
+# payload: 
+################
+[2017-09-20 10:36:03,453] packet.py [line:42] INFO: 
+###ICN PACKET###
+# src guid: 
+# dst_guid: 
+# src_na: 
+# dst_na: 
+# message type: 
+# header length: 
+# header checksum: 
+# TLV: 
+# payload: 
+################
+[2017-09-20 10:36:15,048] packet.py [line:42] INFO: 
+###ICN PACKET###
+# src guid: 
+# dst_guid: 
+# src_na: 
+# dst_na: 
+# message type: 
+# header length: 
+# header checksum: 
+# tlv: 
+# payload: 
+################
+[2017-09-20 10:37:51,305] packet.py [line:42] INFO: 
+###ICN PACKET###
+# src guid: 
+# dst_guid: 
+# src_na: 
+# dst_na: 
+# message type: 
+# header length: 
+# header checksum: 
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:19:55,890] packet.py [line:42] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# message type: 
+# header length: 52
+# header checksum: ffff
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:20:31,495] packet.py [line:42] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:21:06,781] packet.py [line:42] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:21:14,087] packet.py [line:42] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:21:52,718] packet.py [line:42] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:25:27,820] packet.py [line:42] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:25:55,225] packet.py [line:42] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:27:11,131] packet.py [line:42] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:27:46,198] packet.py [line:42] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:28:20,525] packet.py [line:42] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:29:07,513] packet.py [line:50] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:29:44,098] packet.py [line:50] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:30:42,687] packet.py [line:50] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: ff
+# payload: 
+################
+[2017-09-20 14:30:56,948] packet.py [line:50] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: aa
+# payload: 
+################
+[2017-09-20 14:35:08,842] packet.py [line:62] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: aa
+# payload: 
+################
+[2017-09-20 14:35:51,362] packet.py [line:62] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: aa
+# payload: 
+################
+[2017-09-20 14:37:26,581] packet.py [line:62] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: ffff
+# tlv: aa
+# payload: 
+################
+[2017-09-20 14:37:52,435] packet.py [line:62] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 53
+# header checksum: 9410
+# tlv: aa
+# payload: 
+################
+[2017-09-20 14:39:56,934] packet.py [line:63] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 9239
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:41:55,442] packet.py [line:63] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 9239
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:45:29,120] packet.py [line:87] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 23
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:45:58,820] packet.py [line:63] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 9239
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:46:53,256] packet.py [line:63] INFO: 
+###ICN PACKET###
+# src guid: 0000000000000000000000000000000000000000
+# dst_guid: 0000000000000000000000000000000000000000
+# src_na: 00000000
+# dst_na: 00000000
+# service type: 00
+# header length: 52
+# header checksum: 52
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:47:23,532] packet.py [line:63] INFO: 
+###ICN PACKET###
+# src guid: 0000000000000000000000000000000000000000
+# dst_guid: 0000000000000000000000000000000000000000
+# src_na: 00000000
+# dst_na: 00000000
+# service type: 00
+# header length: 52
+# header checksum: 52
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:48:03,844] packet.py [line:63] INFO: 
+###ICN PACKET###
+# src guid: 0000000000000000000000000000000000000000
+# dst_guid: 0000000000000000000000000000000000000000
+# src_na: 00000000
+# dst_na: 00000000
+# service type: 00
+# header length: 52
+# header checksum: 52
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:48:58,704] packet.py [line:63] INFO: 
+###ICN PACKET###
+# src guid: 0000000000000000000000000000000000000000
+# dst_guid: 0000000000000000000000000000000000000000
+# src_na: 00000000
+# dst_na: 00000000
+# service type: 00
+# header length: 52
+# header checksum: 52
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:49:37,558] packet.py [line:63] INFO: 
+###ICN PACKET###
+# src guid: 0000000000000000000000000000000000000000
+# dst_guid: 0000000000000000000000000000000000000000
+# src_na: 00000000
+# dst_na: 00000000
+# service type: 00
+# header length: 52
+# header checksum: 52
+# tlv: 
+# payload: 
+################
+[2017-09-20 14:52:45,088] packet.py [line:64] INFO: 
+###ICN PACKET###
+# src guid: 0000000000000000000000000000000000000000
+# dst_guid: 0000000000000000000000000000000000000000
+# src_na: 00000000
+# dst_na: 00000000
+# service type: 00
+# header length: 0
+# header checksum: 0
+# tlv: 
+# payload: 
+################
+[2017-09-20 15:24:46,498] packet.py [line:62] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 9239
+# tlv: 
+# payload: 
+################
+[2017-09-20 15:25:45,521] packet.py [line:62] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 9239
+# tlv: 
+# payload: 
+################
+[2017-09-20 15:26:03,298] packet.py [line:62] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 9239
+# tlv: 
+# payload: 
+################
+[2017-09-20 15:26:21,588] packet.py [line:62] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 9239
+# tlv: 
+# payload: 
+################
+[2017-09-20 15:26:36,508] packet.py [line:62] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 9239
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:04:55,394] packet.py [line:70] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:11:56,923] packet.py [line:70] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:13:55,869] packet.py [line:70] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:14:10,096] packet.py [line:70] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:14:48,705] packet.py [line:70] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:20:09,506] packet.py [line:70] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:32:29,594] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 34
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:32:49,707] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 34
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:33:44,493] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 34
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:34:09,549] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:34:24,539] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:37:43,027] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:37:51,546] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffeeffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:38:00,912] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:38:04,564] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: fffffeffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:38:08,663] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:41:22,734] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: ffffffffffffffffffffffffffffffffffffffff
+# src_na: ffffffff
+# dst_na: 12345678
+# service type: ee
+# header length: 52
+# header checksum: 2417
+# tlv: 
+# payload: 
+################
+[2017-09-20 16:43:30,845] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: affffffffffffffffffffffffffffffffffffffa
+# src_na: 87654321
+# dst_na: 12345678
+# service type: ee
+# header length: 54
+# header checksum: 2426
+# tlv: abcd
+# payload: dcba
+################
+[2017-09-20 16:43:39,325] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: affffffffffffffffffffffffffffffffffffffa
+# src_na: 87654321
+# dst_na: 12345678
+# service type: ee
+# header length: 55
+# header checksum: 2516
+# tlv: abcdef
+# payload: dcba
+################
+[2017-09-20 16:43:56,174] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: affffffffffffffffffffffffffffffffffffffa
+# src_na: 87654321
+# dst_na: 12345678
+# service type: ee
+# header length: 55
+# header checksum: 2516
+# tlv: abcdef
+# payload: dcba
+################
+[2017-09-20 16:44:12,349] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: affffffffffffffffffffffffffffffffffffffa
+# src_na: 87654321
+# dst_na: 12345678
+# service type: ee
+# header length: 55
+# header checksum: 2516
+# tlv: abcdef
+# payload: dcba
+################
+[2017-09-20 16:45:00,162] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: affffffffffffffffffffffffffffffffffffffa
+# src_na: 87654321
+# dst_na: 12345678
+# service type: ee
+# header length: 55
+# header checksum: 2516
+# tlv: abcdef
+# payload: dcba
+################
+[2017-09-20 17:19:23,381] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: affffffffffffffffffffffffffffffffffffffa
+# src_na: 87654321
+# dst_na: 12345678
+# service type: ee
+# header length: 55
+# header checksum: 2516
+# tlv: abcdef
+# payload: dcba
+################
+[2017-09-20 17:27:19,785] packet_server.py [line:30] INFO: Server socket bind to 127.0.0.1:35000
+[2017-09-20 17:27:19,785] packet_server.py [line:32] INFO: Start listening
+[2017-09-20 17:27:19,785] packet_server.py [line:34] INFO: Waiting for connect...
+[2017-09-20 17:27:24,898] packet_client.py [line:14] INFO: Connect to server 127.0.0.1:35000
+[2017-09-20 17:27:24,898] packet_server.py [line:36] INFO: Connect to client ('127.0.0.1', 52273)
+[2017-09-20 17:27:24,898] packet_client.py [line:16] INFO: Request: 40000 has been sent.
+[2017-09-20 17:27:24,898] packet_server.py [line:34] INFO: Waiting for connect...
+[2017-09-20 17:27:24,898] packet_client.py [line:18] INFO: Reply is: OK
+[2017-09-20 17:27:24,899] packet_client.py [line:33] INFO: Socket: ('127.0.0.1', 52273) has been closed.
+[2017-09-20 17:27:24,899] packet_server.py [line:24] INFO: Socket: ('127.0.0.1', 52273) has been closed.
+[2017-09-20 17:28:04,313] packet_server.py [line:30] INFO: Server socket bind to 127.0.0.1:35000
+[2017-09-20 17:28:04,314] packet_server.py [line:32] INFO: Start listening
+[2017-09-20 17:28:04,314] packet_server.py [line:34] INFO: Waiting for connect...
+[2017-09-20 17:28:06,478] packet_client.py [line:14] INFO: Connect to server 127.0.0.1:35000
+[2017-09-20 17:28:06,478] packet_server.py [line:36] INFO: Connect to client ('127.0.0.1', 52280)
+[2017-09-20 17:28:06,478] packet_client.py [line:16] INFO: Request: 40000 has been sent.
+[2017-09-20 17:28:06,478] packet_server.py [line:34] INFO: Waiting for connect...
+[2017-09-20 17:28:06,479] packet_client.py [line:18] INFO: Reply is: OK
+[2017-09-20 17:28:06,479] packet_client.py [line:33] INFO: Socket: ('127.0.0.1', 52280) has been closed.
+[2017-09-20 17:28:06,479] packet_server.py [line:24] INFO: Socket: ('127.0.0.1', 52280) has been closed.
+[2017-09-20 17:28:58,014] packet_server.py [line:30] INFO: Server socket bind to 127.0.0.1:35000
+[2017-09-20 17:28:58,014] packet_server.py [line:32] INFO: Start listening
+[2017-09-20 17:28:58,014] packet_server.py [line:34] INFO: Waiting for connect...
+[2017-09-20 17:28:59,344] packet_client.py [line:14] INFO: Connect to server 127.0.0.1:35000
+[2017-09-20 17:28:59,344] packet_server.py [line:36] INFO: Connect to client ('127.0.0.1', 52302)
+[2017-09-20 17:28:59,344] packet_client.py [line:16] INFO: Request: 40000 has been sent.
+[2017-09-20 17:28:59,345] packet_server.py [line:34] INFO: Waiting for connect...
+[2017-09-20 17:28:59,345] packet_client.py [line:18] INFO: Reply is: OK
+[2017-09-20 17:28:59,347] packet_client.py [line:27] INFO: over
+[2017-09-20 17:28:59,347] packet_client.py [line:33] INFO: Socket: ('127.0.0.1', 52302) has been closed.
+[2017-09-20 17:28:59,349] packet_server.py [line:24] INFO: Socket: ('127.0.0.1', 52302) has been closed.
+[2017-09-20 17:30:26,005] packet_server.py [line:34] INFO: Server socket bind to 127.0.0.1:35000
+[2017-09-20 17:30:26,005] packet_server.py [line:36] INFO: Start listening
+[2017-09-20 17:30:26,005] packet_server.py [line:38] INFO: Waiting for connect...
+[2017-09-20 17:30:28,494] packet_client.py [line:14] INFO: Connect to server 127.0.0.1:35000
+[2017-09-20 17:30:28,494] packet_server.py [line:40] INFO: Connect to client ('127.0.0.1', 52323)
+[2017-09-20 17:30:28,494] packet_client.py [line:16] INFO: Request: 57 has been sent.
+[2017-09-20 17:30:28,494] packet_server.py [line:38] INFO: Waiting for connect...
+[2017-09-20 17:30:28,494] packet_client.py [line:18] INFO: Reply is: OK
+[2017-09-20 17:30:28,495] packet_client.py [line:27] INFO: over
+[2017-09-20 17:30:28,495] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: affffffffffffffffffffffffffffffffffffffa
+# src_na: 87654321
+# dst_na: 12345678
+# service type: ee
+# header length: 55
+# header checksum: 2516
+# tlv: abcdef
+# payload: dcba
+################
+[2017-09-20 17:30:28,495] packet_client.py [line:33] INFO: Socket: ('127.0.0.1', 52323) has been closed.
+[2017-09-20 17:30:28,495] packet_server.py [line:28] INFO: Socket: ('127.0.0.1', 52323) has been closed.
+[2017-09-20 17:30:57,107] packet_client.py [line:14] INFO: Connect to server 127.0.0.1:35000
+[2017-09-20 17:30:57,107] packet_server.py [line:40] INFO: Connect to client ('127.0.0.1', 52325)
+[2017-09-20 17:30:57,107] packet_client.py [line:16] INFO: Request: 57 has been sent.
+[2017-09-20 17:30:57,107] packet_server.py [line:38] INFO: Waiting for connect...
+[2017-09-20 17:30:57,108] packet_client.py [line:18] INFO: Reply is: OK
+[2017-09-20 17:30:57,108] packet_client.py [line:27] INFO: over
+[2017-09-20 17:30:57,108] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: affffffffffffffffffffffffffffffffffffffa
+# src_na: 87654321
+# dst_na: 12345678
+# service type: ee
+# header length: 55
+# header checksum: 2516
+# tlv: abcdef
+# payload: dcba
+################
+[2017-09-20 17:30:57,108] packet_client.py [line:33] INFO: Socket: ('127.0.0.1', 52325) has been closed.
+[2017-09-20 17:30:57,108] packet_server.py [line:28] INFO: Socket: ('127.0.0.1', 52325) has been closed.
+[2017-09-20 17:31:21,981] packet_server.py [line:34] INFO: Server socket bind to 127.0.0.1:35000
+[2017-09-20 17:31:21,982] packet_server.py [line:36] INFO: Start listening
+[2017-09-20 17:31:21,982] packet_server.py [line:38] INFO: Waiting for connect...
+[2017-09-20 17:31:31,499] packet_client.py [line:14] INFO: Connect to server 127.0.0.1:35000
+[2017-09-20 17:31:31,499] packet_server.py [line:40] INFO: Connect to client ('127.0.0.1', 52326)
+[2017-09-20 17:31:31,499] packet_client.py [line:16] INFO: Request: 57 has been sent.
+[2017-09-20 17:31:31,500] packet_server.py [line:38] INFO: Waiting for connect...
+[2017-09-20 17:31:31,500] packet_client.py [line:18] INFO: Reply is: OK
+[2017-09-20 17:31:31,500] packet_client.py [line:27] INFO: over
+[2017-09-20 17:31:31,500] packet.py [line:78] INFO: 
+###ICN PACKET###
+# src guid: 0123456789abcdef0123456789abcdef12abcdef
+# dst_guid: affffffffffffffffffffffffffffffffffffffa
+# src_na: 87654321
+# dst_na: 12345678
+# service type: ee
+# header length: 55
+# header checksum: 2516
+# tlv: abcdef
+# payload: dcba
+################
+[2017-09-20 17:31:31,500] packet_client.py [line:33] INFO: Socket: ('127.0.0.1', 52326) has been closed.
+[2017-09-20 17:31:31,500] packet_server.py [line:28] INFO: Socket: ('127.0.0.1', 52326) has been closed.

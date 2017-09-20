@@ -103,7 +103,7 @@ def start_server():
 
 
 if __name__ == '__main__':
-    ncs_ip, ncs_port = '192.168.46.101', 22701
+    ncs_ip, ncs_port = '192.168.46.101', 22700
     db_ip, db_port = '127.0.0.1', 27017
     mydb = dbtool.myDB(db_ip, db_port, 'ncs')
     # print(query_all('QUERYALL###'))
