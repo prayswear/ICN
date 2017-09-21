@@ -1,5 +1,7 @@
 import logging.config
 import socket
+from packet import *
+import binascii
 
 logging.config.fileConfig('logging.conf')
 logger = logging.getLogger('myLogger')
@@ -36,6 +38,13 @@ def send_packet(packet):
 if __name__ == '__main__':
     packet_server_ip = '127.0.0.1'
     packet_server_port = 35000
-    data = b'\x01#Eg\x89\xab\xcd\xef\x01#Eg\x89\xab\xcd\xef\x12\xab\xcd\xef\xaf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfa\x87eC!\x124Vx\xee7%\x16\xab\xcd\xef\xdc\xba'
+    # data = b'\x01#Eg\x89\xab\xcd\xef\x01#Eg\x89\xab\xcd\xef\x12\xab\xcd\xef\xaf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfa\x87eC!\x124Vx\xee7%\x16\xab\xcd\xef\xdc\xba'
+    packet=ICNPacket()
+    packet.setHeader('0123456789abcdef0123456789abcdef12abcdef','affffffffffffffffffffffffffffffffffffffa','87654321','12345678','11')
+    packet.setPayload(binascii.a2b_hex('e'*346536))
+    print(packet.payload)
+    packet.fill_packet()
+    data=packet.grap_packet()
+    packet.print_packet()
     print(len(data))
     send_packet(data)

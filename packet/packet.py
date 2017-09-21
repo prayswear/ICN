@@ -15,7 +15,7 @@ class ICNPacket():
         self.header_len = 52  # 0-255
         self.header_checksum = ''
         self.tlv = ''
-        self.payload = ''
+        self.payload = b''
 
     def setHeader(self, src_guid='', dst_guid='', src_na='', dst_na='',
                   service_type=''):
@@ -53,7 +53,7 @@ class ICNPacket():
         service_type_hex = binascii.a2b_hex(self.service_type)
         header_len_hex = binascii.a2b_hex(hex(self.header_len).replace('0x', ''))
         tlv_hex = binascii.a2b_hex(self.tlv)
-        payload_hex = binascii.a2b_hex(self.payload)
+        payload_hex = self.payload
         other = src_guid_hex + dst_guid_hex + src_na_hex + dst_na_hex + service_type_hex + header_len_hex + tlv_hex + payload_hex
         return self.checksum(other)
 
@@ -74,7 +74,7 @@ class ICNPacket():
             '\n# header length: ' + str(self.header_len) +
             '\n# header checksum: ' + self.header_checksum +
             '\n# tlv: ' + self.tlv +
-            '\n# payload: ' + self.payload +
+            '\n# payload: ' + binascii.b2a_hex(self.payload).decode('utf-8') +
             '\n################')
 
     def grap_packet(self):
@@ -86,8 +86,7 @@ class ICNPacket():
         header_len_hex = binascii.a2b_hex(hex(self.header_len).replace('0x', ''))
         header_checksum_hex = binascii.a2b_hex(self.header_checksum)
         tlv_hex = binascii.a2b_hex(self.tlv)
-        payload_hex = binascii.a2b_hex(self.payload)
-        hex_result = src_guid_hex + dst_guid_hex + src_na_hex + dst_na_hex + service_type_hex + header_len_hex + header_checksum_hex + tlv_hex + payload_hex
+        hex_result = src_guid_hex + dst_guid_hex + src_na_hex + dst_na_hex + service_type_hex + header_len_hex + header_checksum_hex + tlv_hex + self.payload
         return hex_result
 
     def gen_from_hex(self, data):
@@ -99,4 +98,4 @@ class ICNPacket():
         self.header_len = int(binascii.b2a_hex(data[49:50]),16)
         self.header_checksum = binascii.b2a_hex(data[50:52]).decode('utf-8')
         self.tlv=binascii.b2a_hex(data[52:self.header_len]).decode('utf-8')
-        self.payload=binascii.b2a_hex(data[self.header_len:len(data)]).decode('utf-8')
+        self.payload=data[self.header_len:len(data)]
