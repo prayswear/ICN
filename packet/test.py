@@ -1,8 +1,20 @@
 from packet import *
 import binascii
 import hashlib
+import time
 
-print('123', ' ', 3, ' ', 3)
+a=binascii.a2b_hex('00' * 100)
+data=b'\x01#Eg\x89\xab\xcd\xef\x01#Eg\x89\xab\xcd\xef\x12\xab\xcd\xef\xff\xff\xff\xff\xff\xff\xff'
+# a[0:len(data)]=data[0:len(data)]
+b=data+a[len(data):100]
+
+print(b)
+# print(int(3.99))
+#
+# print(3==(9/3))
+# print(type(9/3))
+# print(type(int(8/3)))
+# print('123', ' ', 3, ' ', 3)
 # def int2bytes(num, format):
 #     num_hex_str = hex(num).replace('0x', '')
 #     format_str = '0' * (format - len(num_hex_str)) + num_hex_str

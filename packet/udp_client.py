@@ -15,16 +15,19 @@ def int2bytes(num, format):
     format_str = '0' * (format - len(num_hex_str)) + num_hex_str
     return binascii.a2b_hex(format_str)
 
-def send_cmd_packet(address,data):
-    if len(data)>DATA_SIZE_PER_UDP:
+
+def send_cmd_packet(data, address):
+    if len(data) > DATA_SIZE_PER_UDP:
         return False
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.sendto(data, address)
-    reply,remote_addr=sock.recvfrom(1024)
+    reply, remote_addr = sock.recvfrom(1024)
     logger.info(reply.decode('utf-8'))
     sock.close()
 
-def send_data_packet(address, data):
+
+def send_data_packet(data, address):
+    print('send data packet')
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     packet_size = len(data)
     sent_size = 0
@@ -48,11 +51,13 @@ if __name__ == '__main__':
     cmd_server_address = ('127.0.0.1', 35000)
     data_server_address = ('127.0.0.1', 36000)
     packet = ICNPacket()
-    packet.setHeader('0123456789abcdef0123456789abcdef', 'afffffffffffffffffffffffffffffff', '00')
-    packet.setPayload(binascii.a2b_hex('ee' * 100))
+    packet.setHeader('0123456789abcdef0123456789abcdef', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '00')
+    packet.setPayload(binascii.a2b_hex('ff' * 100000))
     packet.fill_packet()
     data = packet.grap_packet()
-    packet.print_packet()
+    # packet.print_packet()
     print(len(data))
-    send_cmd_packet(cmd_server_address,data)
-    # send_data_packet(udp_server_address, data)
+    a=packet.header_checksum
+    print(a)
+    # send_cmd_packet(data,cmd_server_address)
+    send_data_packet(data, data_server_address)
