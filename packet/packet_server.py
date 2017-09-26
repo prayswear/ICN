@@ -40,7 +40,13 @@ def start_server():
         logger.info("Connect to client " + str(address))
         threading._start_new_thread(client_handler, (client_socket, address))
 
+def client_udp_handler(client_socket,address):
+    pass
+
+def start_udp_server():
+    
+    pass
 
 if __name__ == '__main__':
     packet_server_ip, packet_server_port = '127.0.0.1', 35000
-    start_server()
+    start_udp_server()

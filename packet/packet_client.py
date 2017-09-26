@@ -24,6 +24,7 @@ def send_packet(dst_ip, dsp_port, packet):
             remained_size = packet_size - sent_size
             send_size = BUFFER_SIZE if remained_size > BUFFER_SIZE else remained_size
             send_data = packet[point:point + send_size]
+            point += send_size
             sent_size += send_size
             sock.send(send_data)
         logger.info('over')
