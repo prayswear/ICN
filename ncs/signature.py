@@ -2,7 +2,7 @@ import hashlib
 
 
 def gen_guid(str):
-    return hashlib.sha1(str.encode('utf-8')).hexdigest()[0:40]
+    return hashlib.sha1(str.encode('utf-8')).hexdigest()[0:32]
 
 
 if __name__ == '__main__':

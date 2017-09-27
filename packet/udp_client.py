@@ -46,18 +46,39 @@ def send_data_packet(data, address):
         sock.sendto(send_data, address)
     sock.close()
 
+def data_send(data,address):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    packet_size = len(data)
+    sent_size = 0
+    point = 0
+    count = 0
+    id = binascii.a2b_hex(hashlib.sha1(data).hexdigest()[0:4])
+    print(id)
+    while sent_size < packet_size:
+        remained_size = packet_size - sent_size
+        send_size = DATA_SIZE_PER_UDP if remained_size > DATA_SIZE_PER_UDP else remained_size
+        send_data = id + int2bytes(packet_size, 8) + int2bytes(count, 4)
+        send_data += data[point:point + send_size]
+        point += send_size
+        sent_size += send_size
+        count += 1
+        print(count)
+        sock.sendto(send_data, address)
+        sock.recvfrom(1024)
+    sock.close()
+
 
 if __name__ == '__main__':
     cmd_server_address = ('127.0.0.1', 35000)
-    data_server_address = ('127.0.0.1', 36000)
+    data_server_address = ('192.168.100.149', 36000)
     packet = ICNPacket()
     packet.setHeader('0123456789abcdef0123456789abcdef', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '00')
-    packet.setPayload(binascii.a2b_hex('ff' * 100000))
+    packet.setPayload(binascii.a2b_hex('0032b21a8b313217920f2d0f85ba469d4d' * 6530))
+    packet.setPayload(binascii.a2b_hex('ff' * 65000))
     packet.fill_packet()
     data = packet.grap_packet()
-    # packet.print_packet()
+    packet.print_packet()
     print(len(data))
-    a=packet.header_checksum
-    print(a)
-    # send_cmd_packet(data,cmd_server_address)
+    # send_cmd_packet(data,('192.168.100.133',35000))
     send_data_packet(data, data_server_address)
+    # data_send(data,data_server_address)

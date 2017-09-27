@@ -88,7 +88,7 @@ def start_server():
 
 
 if __name__ == '__main__':
-    gnrs_ip, gnrs_port = '192.168.46.101', 12700
+    gnrs_ip, gnrs_port = '192.168.46.214', 12700
     db_ip, db_port = '127.0.0.1', 27017
 
     mydb = dbtool.myDB(db_ip, db_port, 'gnrs')
