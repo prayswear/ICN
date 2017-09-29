@@ -4,11 +4,13 @@ import logging.config
 from packet import *
 import binascii
 import time
+import os
 
 logging.config.fileConfig('logging.conf')
 logger = logging.getLogger('myLogger')
 DATA_SIZE_PER_UDP = 1024
 temp_packet_dict = {}
+
 
 
 def cmd_handler(data, address):
@@ -21,6 +23,7 @@ def cmd_handler(data, address):
     # you can also call another func here
 
 
+
 def data_finish_handler(data, address):
     logger.info('Recieve a packet from ' + str(address))
     p = ICNPacket()
@@ -28,8 +31,12 @@ def data_finish_handler(data, address):
     p.print_packet()
     reply_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     reply_socket.sendto('OK'.encode('utf-8'), address)
-    f = open('abc.h264', 'wb')
+    f = open('input.h264', 'wb')
     f.write(p.payload)
+    f.close()
+    os.system('avconv -r 24 -i input.h264 -vcodec copy output.mp4 -y')
+    os.system('cp output.mp4 xxx1_'+str(int(time.time()))+'.mp4')
+
 
 
 def timeout_handler(packet_id, address):
@@ -135,7 +142,8 @@ def start_cmd_server(address):
 if __name__ == '__main__':
     cmd_server_address = ('127.0.0.1', 35000)
     # data_server_address = ('192.168.46.214', 36000)
-    data_server_address = ('192.168.100.149', 36000)
+    data_server_address = ('192.168.100.2', 36000)
     # start_cmd_server(cmd_server_address)
+    flag3=0
     start_data_server(data_server_address)
     # data_trans(data_server_address)

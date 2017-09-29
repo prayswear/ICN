@@ -4,6 +4,7 @@ import logging.config
 from packet import *
 import binascii
 import hashlib
+import time
 
 logging.config.fileConfig('logging.conf')
 logger = logging.getLogger('myLogger')
@@ -44,6 +45,8 @@ def send_data_packet(data, address):
         sent_size += send_size
         count += 1
         sock.sendto(send_data, address)
+        if count==1:
+            time.sleep(0.5)
     sock.close()
 
 def data_send(data,address):
@@ -69,16 +72,18 @@ def data_send(data,address):
 
 
 if __name__ == '__main__':
-    cmd_server_address = ('127.0.0.1', 35000)
-    data_server_address = ('192.168.100.149', 36000)
+    cmd_server_address = ('192.168.100.133', 35000)
+    data_server_address = ('192.168.100.133', 36000)
     packet = ICNPacket()
     packet.setHeader('0123456789abcdef0123456789abcdef', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '00')
-    packet.setPayload(binascii.a2b_hex('0032b21a8b313217920f2d0f85ba469d4d' * 6530))
-    packet.setPayload(binascii.a2b_hex('ff' * 65000))
+    packet.setPayload(binascii.a2b_hex('0dab92b7014f2887ea05450143f4c9ad01'))
+    # packet.setPayload(binascii.a2b_hex('ff' * 65000))
     packet.fill_packet()
     data = packet.grap_packet()
     packet.print_packet()
     print(len(data))
-    # send_cmd_packet(data,('192.168.100.133',35000))
-    send_data_packet(data, data_server_address)
+    while True:
+        send_cmd_packet(data,('192.168.1.21',35000))
+        time.sleep(1.8)
+    # send_data_packet(data, data_server_address)
     # data_send(data,data_server_address)
