@@ -34,8 +34,8 @@ def data_finish_handler(data, address):
     f = open('input.h264', 'wb')
     f.write(p.payload)
     f.close()
-    os.system('avconv -r 24 -i input.h264 -vcodec copy output.mp4 -y')
-    os.system('cp output.mp4 xxx1_'+str(int(time.time()))+'.mp4')
+    #os.system('avconv -r 24 -i input.h264 -vcodec copy output.mp4 -y')
+    #os.system('cp output.mp4 xxx1_'+str(int(time.time()))+'.mp4')
 
 
 
@@ -56,6 +56,7 @@ def data_handler(data, address):
     packet_length = int(binascii.b2a_hex(data[2:6]), 16)
     packet_seq = int(binascii.b2a_hex(data[6:8]), 16)
     data = data[8:len(data)]
+    times=2
     # print(packet_id, ' ', packet_length, ' ', packet_seq)
     if packet_seq == 0:
         temp_dict = {}
@@ -64,9 +65,9 @@ def data_handler(data, address):
         temp_dict['data'] = data + temp_data[len(data):packet_length]
         packet_num = packet_length / DATA_SIZE_PER_UDP
         if packet_num == int(packet_num):
-            temp_dict['count'] = int(packet_num)
+            temp_dict['count'] = int(packet_num)*times-times+1
         else:
-            temp_dict['count'] = int(packet_num) + 1
+            temp_dict['count'] = (int(packet_num) + 1)*times-times+1
         temp_packet_dict[packet_id] = temp_dict
         print('packet_seq: ' + str(packet_seq))
         threading._start_new_thread(timeout_handler, (packet_id, address))
@@ -142,7 +143,7 @@ def start_cmd_server(address):
 if __name__ == '__main__':
     cmd_server_address = ('127.0.0.1', 35000)
     # data_server_address = ('192.168.46.214', 36000)
-    data_server_address = ('192.168.100.2', 36000)
+    data_server_address = ('192.168.3.185', 36000)
     # start_cmd_server(cmd_server_address)
     flag3=0
     start_data_server(data_server_address)

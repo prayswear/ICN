@@ -47,6 +47,19 @@ def send_data_packet(data, address):
         sock.sendto(send_data, address)
         if count==1:
             time.sleep(0.5)
+    #send it again
+    sent_size = DATA_SIZE_PER_UDP
+    point = DATA_SIZE_PER_UDP
+    count = 1
+    while sent_size < packet_size:
+        remained_size = packet_size - sent_size
+        send_size = DATA_SIZE_PER_UDP if remained_size > DATA_SIZE_PER_UDP else remained_size
+        send_data = id + int2bytes(packet_size, 8) + int2bytes(count, 4)
+        send_data += data[point:point + send_size]
+        point += send_size
+        sent_size += send_size
+        count += 1
+        sock.sendto(send_data, address)
     sock.close()
 
 def data_send(data,address):
@@ -83,7 +96,7 @@ if __name__ == '__main__':
     packet.print_packet()
     print(len(data))
     while True:
-        send_cmd_packet(data,('192.168.1.21',35000))
+        send_cmd_packet(data,('192.168.2.197',35000))
         time.sleep(1.8)
     # send_data_packet(data, data_server_address)
     # data_send(data,data_server_address)
