@@ -97,11 +97,15 @@ if __name__ == '__main__':
     print(len(data))
 
     while True:
+        notify_address=('192.168.1.101',23333)
+        notify_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        notify_socket.bind(notify_address)
+        data, client_address = notify_socket.recvfrom(1024)
         with open('delayflag.txt','w') as fp:
             fp.write(str(time.time()))
             fp.flush()
             fp.close()
         send_cmd_packet(data,('192.168.1.21',35000))
-        time.sleep(2)
+        #time.sleep(2)
     # send_data_packet(data, data_server_address)
     # data_send(data,data_server_address)
