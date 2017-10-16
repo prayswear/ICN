@@ -97,8 +97,11 @@ if __name__ == '__main__':
     print(len(data))
 
     while True:
-
+        with open('delayflag.txt','w') as fp:
+            fp.write(str(time.time()))
+            fp.flush()
+            fp.close()
         send_cmd_packet(data,('192.168.2.197',35000))
-        time.sleep(1.8)
+        time.sleep(2)
     # send_data_packet(data, data_server_address)
     # data_send(data,data_server_address)

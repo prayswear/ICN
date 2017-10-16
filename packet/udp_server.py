@@ -11,7 +11,6 @@ logging.config.fileConfig('logging.conf')
 logger = logging.getLogger('myLogger')
 DATA_SIZE_PER_UDP = 1024
 temp_packet_dict = {}
-
 ave_packet_recv_rate = 0
 
 
@@ -61,6 +60,7 @@ def data_handler(data, address):
     times = 2
     # print(packet_id, ' ', packet_length, ' ', packet_seq)
     if packet_seq == 0:
+        record_delay(packet_id)
         temp_dict = {}
         # temp_dict['time'] = time.time()
         temp_data = binascii.a2b_hex('00' * packet_length)
@@ -92,6 +92,14 @@ def data_handler(data, address):
         data_finish_handler(temp_packet_dict[packet_id]['data'], address)
         del temp_packet_dict[packet_id]
 
+def record_delay(packet_id):
+    with open('delayflag.txt', 'r') as f:
+        start_time = float(f.readline())
+        f.close()
+    with open('delay_record.txt', 'a') as f2:
+        f2.write(str(datetime.datetime.now()) + '  delay of packet:' +packet_id+' is '+str(time.time()-start_time))
+        f2.flush()
+        f2.close()
 
 def start_data_server(address):
     data_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

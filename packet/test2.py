@@ -1,11 +1,13 @@
 from packet import *
 import binascii
 import logging.config
+import time
 
-logging.config.fileConfig('logging.conf')
-#logger = logging.getLogger('myLogger')
-#logger.info('mylogger')
+with open('delayflag.txt', 'w') as fp:
+    fp.write(str(time.time()))
+    fp.flush()
+    fp.close()
 
-logger2=logging.getLogger('delayLogger')
-logger2.info('delayLogger')
-#logger.info('ok')
+with open('delayflag.txt','r') as f:
+    a=float(f.readline())
+    print(a)
