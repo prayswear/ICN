@@ -6,6 +6,8 @@ import binascii
 import time
 import os
 import datetime
+import urllib.request
+import urllib.parse
 
 logging.config.fileConfig('logging.conf')
 logger = logging.getLogger('myLogger')
@@ -13,7 +15,17 @@ DATA_SIZE_PER_UDP = 1024
 temp_packet_dict = {}
 ave_packet_recv_rate = 0
 
+def sseenndd(fpfp,idid1,idid2):
+    params = urllib.parse.urlencode({'filePath': fpfp, 'euid': idid1, 'na': idid2})
+    url = "http://127.0.0.1:8080/icn-api/v1/monitor/notify?%s" % params
+    urllib.request.urlopen(url)
+    # with urllib.request.urlopen(url) as f:
+    #     print(f.read().decode('utf-8'))
 
+
+
+
+#/home/lijq/PycharmProjects/ICN/packet/*.mp4
 def cmd_handler(data, address):
     logger.info('Recieve a packet from ' + str(address))
     p = ICNPacket()
@@ -33,8 +45,11 @@ def data_finish_handler(data, address):
     f = open('input.h264', 'wb')
     f.write(p.payload)
     f.close()
-    # os.system('avconv -r 24 -i input.h264 -vcodec copy output.mp4 -y')
-    # os.system('cp output.mp4 xxx1_'+str(int(time.time()))+'.mp4')
+    os.system('avconv -r 24 -i input.h264 -vcodec copy output.mp4 -y')
+    filetime=str(int(time.time()))
+    os.system('cp output.mp4 cam1_'+filetime+'.mp4')
+    filepath='/home/lijq/PycharmProjects/ICN/packet/cam1_'+filetime+'.mp4'
+    sseenndd(filepath, '0dab92b7014f2887ea05450143f4c9ad01', str(address[0]))
 
 
 def timeout_handler(packet_id, address):
@@ -57,7 +72,7 @@ def data_handler(data, address):
     packet_length = int(binascii.b2a_hex(data[2:6]), 16)
     packet_seq = int(binascii.b2a_hex(data[6:8]), 16)
     data = data[8:len(data)]
-    times = 2
+    times = 1
     # print(packet_id, ' ', packet_length, ' ', packet_seq)
     if packet_seq == 0:
         record_delay(packet_id)
@@ -97,7 +112,7 @@ def record_delay(packet_id):
         start_time = float(f.readline())
         f.close()
     with open('delay_record.txt', 'a') as f2:
-        f2.write(str(datetime.datetime.now()) + '  delay of packet:' +packet_id+' is '+str(time.time()-start_time))
+        f2.write(str(datetime.datetime.now()) + '  delay of packet:' +packet_id.decode('utf-8')+' is '+str(time.time()-start_time)+'\n')
         f2.flush()
         f2.close()
 
@@ -166,7 +181,7 @@ def start_cmd_server(address):
 if __name__ == '__main__':
     cmd_server_address = ('127.0.0.1', 35000)
     # data_server_address = ('192.168.46.214', 36000)
-    data_server_address = ('192.168.100.149', 36000)
+    data_server_address = ('192.168.1.100', 36000)
     # start_cmd_server(cmd_server_address)
     start_data_server(data_server_address)
     # data_trans(data_server_address)

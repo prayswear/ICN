@@ -101,7 +101,7 @@ if __name__ == '__main__':
             fp.write(str(time.time()))
             fp.flush()
             fp.close()
-        send_cmd_packet(data,('192.168.2.197',35000))
+        send_cmd_packet(data,('192.168.1.21',35000))
         time.sleep(2)
     # send_data_packet(data, data_server_address)
     # data_send(data,data_server_address)
