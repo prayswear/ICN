@@ -5,12 +5,14 @@ from packet import *
 import binascii
 import time
 import os
+import datetime
 
 logging.config.fileConfig('logging.conf')
 logger = logging.getLogger('myLogger')
 DATA_SIZE_PER_UDP = 1024
 temp_packet_dict = {}
 
+ave_packet_recv_rate = 0
 
 
 def cmd_handler(data, address):
@@ -20,8 +22,6 @@ def cmd_handler(data, address):
     p.print_packet()
     reply_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     reply_socket.sendto('OK'.encode('utf-8'), address)
-    # you can also call another func here
-
 
 
 def data_finish_handler(data, address):
@@ -34,9 +34,8 @@ def data_finish_handler(data, address):
     f = open('input.h264', 'wb')
     f.write(p.payload)
     f.close()
-    #os.system('avconv -r 24 -i input.h264 -vcodec copy output.mp4 -y')
-    #os.system('cp output.mp4 xxx1_'+str(int(time.time()))+'.mp4')
-
+    # os.system('avconv -r 24 -i input.h264 -vcodec copy output.mp4 -y')
+    # os.system('cp output.mp4 xxx1_'+str(int(time.time()))+'.mp4')
 
 
 def timeout_handler(packet_id, address):
@@ -46,6 +45,9 @@ def timeout_handler(packet_id, address):
         if timegap > 2:
             if packet_id in temp_packet_dict.keys():
                 data_finish_handler(temp_packet_dict[packet_id]['data'], address)
+                global ave_packet_recv_rate
+                total = temp_packet_dict[packet_id]['total']
+                ave_packet_recv_rate = (total - temp_packet_dict[packet_id]['count']) / total
                 del temp_packet_dict[packet_id]
             break
 
@@ -56,7 +58,7 @@ def data_handler(data, address):
     packet_length = int(binascii.b2a_hex(data[2:6]), 16)
     packet_seq = int(binascii.b2a_hex(data[6:8]), 16)
     data = data[8:len(data)]
-    times=2
+    times = 2
     # print(packet_id, ' ', packet_length, ' ', packet_seq)
     if packet_seq == 0:
         temp_dict = {}
@@ -64,10 +66,12 @@ def data_handler(data, address):
         temp_data = binascii.a2b_hex('00' * packet_length)
         temp_dict['data'] = data + temp_data[len(data):packet_length]
         packet_num = packet_length / DATA_SIZE_PER_UDP
+
         if packet_num == int(packet_num):
-            temp_dict['count'] = int(packet_num)*times-times+1
+            temp_dict['count'] = int(packet_num) * times - times + 1
         else:
-            temp_dict['count'] = (int(packet_num) + 1)*times-times+1
+            temp_dict['count'] = (int(packet_num) + 1) * times - times + 1
+        temp_dict['total'] = temp_dict['count']
         temp_packet_dict[packet_id] = temp_dict
         print('packet_seq: ' + str(packet_seq))
         threading._start_new_thread(timeout_handler, (packet_id, address))
@@ -83,6 +87,8 @@ def data_handler(data, address):
     print('count: ' + str(temp_packet_dict[packet_id]['count']))
     # timegap = time.time() - temp_packet_dict[packet_id]['time']
     if temp_packet_dict[packet_id]['count'] == 0:
+        global ave_packet_recv_rate
+        ave_packet_recv_rate = 1
         data_finish_handler(temp_packet_dict[packet_id]['data'], address)
         del temp_packet_dict[packet_id]
 
@@ -91,11 +97,12 @@ def start_data_server(address):
     data_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     data_socket.bind(address)
     print('start data server')
+    threading._start_new_thread(packet_recv_rate,())
     while True:
         data, client_address = data_socket.recvfrom(DATA_SIZE_PER_UDP + 26)
         threading._start_new_thread(data_handler, (data, client_address))
 
-
+'''
 def data_trans(address):
     data_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     data_socket.bind(address)
@@ -107,34 +114,42 @@ def data_trans(address):
         packet_id = binascii.b2a_hex(data[0:2])
         packet_length = int(binascii.b2a_hex(data[2:6]), 16)
         data = data[8:len(data)]
-        temp_dict={}
+        temp_dict = {}
         packet_num = packet_length / DATA_SIZE_PER_UDP
-        if packet_seq==0:
+        if packet_seq == 0:
             print('ok')
             if packet_num == int(packet_num):
                 temp_dict['count'] = int(packet_num)
             else:
                 temp_dict['count'] = int(packet_num) + 1
-            temp_dict['data']=binascii.a2b_hex('00' * packet_length)
+            temp_dict['data'] = binascii.a2b_hex('00' * packet_length)
             temp_packet_dict[packet_id] = temp_dict
         print(temp_packet_dict[packet_id])
         temp_data = temp_packet_dict[packet_id]['data'][0:packet_seq * DATA_SIZE_PER_UDP] + data + \
                     temp_packet_dict[packet_id]['data'][packet_seq * DATA_SIZE_PER_UDP + len(data):packet_length]
         temp_packet_dict[packet_id]['data'] = temp_data
-        packet_seq+=1
+        packet_seq += 1
 
         temp_packet_dict[packet_id]['count'] -= 1
-        if temp_packet_dict[packet_id]['count'] == 0 :
+        if temp_packet_dict[packet_id]['count'] == 0:
             data_finish_handler(temp_packet_dict[packet_id]['data'], client_address)
-        sock= socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        sock.sendto('OK'.encode('utf-8'),client_address)
+        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        sock.sendto('OK'.encode('utf-8'), client_address)
+'''
 
+def packet_recv_rate():
+    with open('recv_rate.txt', 'a') as fp:
+        while True:
+            global ave_packet_recv_rate
+            fp.write(str(datetime.datetime.now()) + '  recv_rate: ' + str(ave_packet_recv_rate)+'\n')
+            fp.flush()
+            ave_packet_recv_rate = 0
+            time.sleep(2)
 
 
 def start_cmd_server(address):
     cmd_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     cmd_socket.bind(address)
-
     while True:
         data, address = cmd_socket.recvfrom(DATA_SIZE_PER_UDP)
         threading._start_new_thread(cmd_handler, (data, address))
@@ -143,8 +158,7 @@ def start_cmd_server(address):
 if __name__ == '__main__':
     cmd_server_address = ('127.0.0.1', 35000)
     # data_server_address = ('192.168.46.214', 36000)
-    data_server_address = ('192.168.3.185', 36000)
+    data_server_address = ('192.168.100.149', 36000)
     # start_cmd_server(cmd_server_address)
-    flag3=0
     start_data_server(data_server_address)
     # data_trans(data_server_address)

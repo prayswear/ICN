@@ -95,7 +95,9 @@ if __name__ == '__main__':
     data = packet.grap_packet()
     packet.print_packet()
     print(len(data))
+
     while True:
+
         send_cmd_packet(data,('192.168.2.197',35000))
         time.sleep(1.8)
     # send_data_packet(data, data_server_address)

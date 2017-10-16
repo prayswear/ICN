@@ -80,12 +80,12 @@ def query_all():
 
 
 if __name__ == '__main__':
-    ncs_ip = '127.0.0.1'
+    ncs_ip = '192.168.46.175'
     ncs_port = 22700
 
     # list=query_all()
     # print(list)
-    a=get_guid('lij235q','')
+    a=get_guid('lij235q33','')
     print(a)
 
     # print(get_guid('lijqphone', 'phone'))

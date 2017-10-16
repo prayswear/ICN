@@ -92,7 +92,7 @@ def start_server(ip, port):
 
 
 if __name__ == '__main__':
-    ncs_ip = '127.0.0.1'
+    ncs_ip = '192.168.46.175'
     ncs_port = 12701
     dbip = '127.0.0.1'
     dbport = 27017

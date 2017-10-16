@@ -47,7 +47,7 @@ class ICNPacket():
         header_len_hex = binascii.a2b_hex(hex(self.header_len).replace('0x', ''))
         tlv_hex = binascii.a2b_hex(self.tlv)
         payload_hex = self.payload
-        other = src_guid_hex + dst_guid_hex + service_type_hex + header_len_hex + tlv_hex + payload_hex
+        other = src_guid_hex + dst_guid_hex + service_type_hex + header_len_hex
         return self.checksum(other)
 
     def check_checksum(self):
