@@ -2,4 +2,5 @@
 *.txt
 *.mp4
 *.h264
-/__pycache__
+__pycache__/
+/.idea
