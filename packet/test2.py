@@ -2,12 +2,13 @@ from packet import *
 import binascii
 import logging.config
 import time
+import socket
 
-with open('delayflag.txt', 'w') as fp:
-    fp.write(str(time.time()))
-    fp.flush()
-    fp.close()
 
-with open('delayflag.txt','r') as f:
-    a=float(f.readline())
-    print(a)
+# sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+# sock.bind(('0.0.0.0',12321))
+# reply=sock.recvfrom(1024)
+# addr=reply[1]
+# p=ICNPacket()
+# p.gen_from_hex(reply[0])
+# p.print_packet()
