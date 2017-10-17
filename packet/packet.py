@@ -12,8 +12,8 @@ class ICNPacket():
         self.service_type = ''
         self.header_len = 36  # 0-255
         self.header_checksum = ''
-        self.tlv = ''
-        self.payload = b''
+        self.tlv = binascii.a2b_hex('')
+        self.payload = binascii.a2b_hex('')
 
     def setHeader(self, src_guid='', dst_guid='', service_type=''):
         self.src_guid = src_guid
@@ -36,8 +36,11 @@ class ICNPacket():
         result = '0' * (4 - len(checksum_hex)) + checksum_hex
         return result
 
+    def fill_head_len(self):
+        self.header_len = 36 + len(self.tlv)
+
     def fill_packet(self):
-        self.header_len = 36 + int(len(self.tlv) / 2)
+        self.fill_head_len()
         self.header_checksum = self.do_checksum()
 
     def do_checksum(self):
@@ -45,8 +48,6 @@ class ICNPacket():
         dst_guid_hex = binascii.a2b_hex(self.dst_guid)
         service_type_hex = binascii.a2b_hex(self.service_type)
         header_len_hex = binascii.a2b_hex(hex(self.header_len).replace('0x', ''))
-        tlv_hex = binascii.a2b_hex(self.tlv)
-        payload_hex = self.payload
         other = src_guid_hex + dst_guid_hex + service_type_hex + header_len_hex
         return self.checksum(other)
 
@@ -64,8 +65,21 @@ class ICNPacket():
             '\n# service type: ' + self.service_type +
             '\n# header length: ' + str(self.header_len) +
             '\n# header checksum: ' + self.header_checksum +
-            '\n# tlv: ' + self.tlv +
+            '\n# tlv: ' + binascii.b2a_hex(self.tlv).decode('utf-8') +
             '\n# payload: ' + binascii.b2a_hex(self.payload).decode('utf-8') +
+            '\n# payload_len: ' + str(len(self.payload)) + ' Bytes'+
+            '\n################')
+
+    def print_packet_without_payload(self):
+        logger.info(
+            '\n###ICN PACKET###'
+            '\n# src guid: ' + self.src_guid +
+            '\n# dst_guid: ' + self.dst_guid +
+            '\n# service type: ' + self.service_type +
+            '\n# header length: ' + str(self.header_len) +
+            '\n# header checksum: ' + self.header_checksum +
+            '\n# tlv: ' + binascii.b2a_hex(self.tlv).decode('utf-8') +
+            '\n# payload_len: ' + str(len(self.payload)) + ' Bytes'+
             '\n################')
 
     def grap_packet(self):
@@ -74,8 +88,7 @@ class ICNPacket():
         service_type_hex = binascii.a2b_hex(self.service_type)
         header_len_hex = binascii.a2b_hex(hex(self.header_len).replace('0x', ''))
         header_checksum_hex = binascii.a2b_hex(self.header_checksum)
-        tlv_hex = binascii.a2b_hex(self.tlv)
-        hex_result = src_guid_hex + dst_guid_hex + service_type_hex + header_len_hex + header_checksum_hex + tlv_hex + self.payload
+        hex_result = src_guid_hex + dst_guid_hex + service_type_hex + header_len_hex + header_checksum_hex + self.tlv + self.payload
         return hex_result
 
     def gen_from_hex(self, data):
@@ -84,5 +97,5 @@ class ICNPacket():
         self.service_type = binascii.b2a_hex(data[32:33]).decode('utf-8')
         self.header_len = int(binascii.b2a_hex(data[33:34]), 16)
         self.header_checksum = binascii.b2a_hex(data[34:36]).decode('utf-8')
-        self.tlv = binascii.b2a_hex(data[36:self.header_len]).decode('utf-8')
+        self.tlv = data[36:self.header_len]
         self.payload = data[self.header_len:len(data)]
