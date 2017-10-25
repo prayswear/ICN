@@ -45,19 +45,25 @@ def data_finish_handler(packet_id, address):
     p = ICNPacket()
     data_hex = temp_packet_dict[packet_id]['data']
     p.gen_from_hex(data_hex)
-    p.print_packet()
+    p.print_packet_without_payload()
     content_euid = binascii.b2a_hex(p.payload[1:17])
     real_data = p.payload[17:]
     # reply_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     # reply_socket.sendto('OK'.encode('utf-8'), address)
-    with open('input.h264', 'wb') as f:
-        f.write(real_data)
-        f.close()
-    os.system('avconv -r 24 -i input.h264 -vcodec copy output.mp4 -y')
-    filetime = str(int(time.time()))
-    os.system('cp output.mp4 cam1_' + filetime + '.mp4')
-    filepath = 'file:///home/lijq/PycharmProjects/ICN/packet/cam1_' + filetime + '.mp4'
-    notify_page(filepath, content_euid, str(address[0]))
+    if content_euid.decode('utf-8')=='ab92b7014f2887ea05450143f4c9ad01':
+        with open('input.h264', 'wb') as f:
+            f.write(real_data)
+            f.close()
+        os.system('avconv -r 24 -i input.h264 -vcodec copy output.mp4 -y')
+        filetime = str(int(time.time()))
+        os.system('cp output.mp4 cam1_' + filetime + '.mp4')
+        filepath = 'file:///home/lijq/PycharmProjects/ICN/packet/cam1_' + filetime + '.mp4'
+        notify_page(filepath, content_euid, str(address[0]))
+    else:
+        print(content_euid)
+        with open('temprature_'+content_euid.decode('utf-8')+'.txt', 'wb') as f:
+            f.write(real_data)
+            f.close()
 
 
 def timeout_handler(packet_id, address):
@@ -76,7 +82,7 @@ def timeout_handler(packet_id, address):
 
 def data_handler(data, address):
     logger.info('Recv UDP packet from: ' + str(address))
-    recv_times = 1
+    recv_times = 2
     p = ICNPacket()
     p.gen_from_hex(data)
     packet_id = binascii.b2a_hex(p.tlv[0:2])
@@ -124,6 +130,7 @@ def start_data_server(address):
     threading._start_new_thread(packet_recv_rate, ())
     while True:
         data, client_address = data_socket.recvfrom(UDP_MTU)
+        print('get new udp packet from: '+str(client_address))
         threading._start_new_thread(data_handler, (data, client_address))
 
 
@@ -148,3 +155,4 @@ if __name__ == '__main__':
     cmd_address = ('0.0.0.0', 35000)
     data_address = ('0.0.0.0', 36000)
     start_data_server(data_address)
+    # start_cmd_server(cmd_address)
