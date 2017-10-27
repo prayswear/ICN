@@ -7,16 +7,39 @@ import hashlib
 import time
 import subprocess
 
-logging.config.fileConfig('logging.conf')
-logger = logging.getLogger('myLogger')
-
 LAN_UDP_MTU = 1472
 STD_UDP_MTU = 548
-UDP_MTU = LAN_UDP_MTU
+UDP_MTU = STD_UDP_MTU
 ICN_MTU = UDP_MTU - 36  # 36 is len of none-tlv icn head
 ICN_TEMP_MTU = ICN_MTU - 8  # 8 is len of tlv
 ICN_CONTENT_MTU = ICN_TEMP_MTU - 1 - 16  # 1 is icn type, 16 is content euid
 icn_data_reply_type = '09'
+
+logging.config.fileConfig('logging.conf')
+logger = logging.getLogger('myLogger')
+
+selfeuid = '7ee30ed78da46257a17047254b7d6a4b'
+pi1_euid = '2613f2a93a0683bdc6260edfcfec6d76'
+pi2_euid = 'b498dce7ea1f7a1a1b11a48dfef58303'
+cm1_euid = 'b13ded0762217339428aba5d508ddf5c'
+gnrs_addr = ('192.168.47.16', 8899)
+cmd_port = 35000
+data_port = 36000
+
+
+def do_request_without_gnrs():
+    cmd_port = 35000
+    video_content_euid = 'ab92b7014f2887ea05450143f4c9ad01'
+    temprature_content_euid = ''
+    # content_na = ('192.168.1.21', cmd_port)
+    content_na = ('192.168.2.100', cmd_port)
+    # content_na = ('192.168.3.100', cmd_port)
+    request_packet = ICNPacket()
+    request_packet.setHeader('ffffac7196110678d84d03687eab03fb', 'b13ded0762217339428aba5d508ddf5c', '00')
+    request_packet.setPayload(binascii.a2b_hex('0d' + video_content_euid))
+    request_packet.fill_packet()
+    request_packet.print_packet()
+    send_cmd_packet(request_packet.grap_packet(), content_na, False)
 
 
 def int2bytes(num, length):
@@ -119,15 +142,35 @@ def query_gnrs(euid):
         return result
 
 
+def gnrs_sign_up(selfna):
+    selfna_hex = socket.inet_aton(selfna)
+    print(selfna_hex)
+    time_stamp = hex(int(time.time())).replace('0x', '')
+    sign_p = ICNPacket()
+    sign_p.setHeader(selfeuid, cm1_euid, '00')
+    sign_p.setPayload(binascii.a2b_hex('01' + selfeuid) + selfna_hex + binascii.a2b_hex(time_stamp + '01'))
+    sign_p.fill_packet()
+    sign_p.print_packet()
+    recv_p = send_cmd_packet(sign_p.grap_packet(), gnrs_addr, True)
+    p_type = binascii.b2a_hex(recv_p.payload[:1]).decode('utf-8')
+    p_euid = binascii.b2a_hex(recv_p.payload[1:17]).decode('utf-8')
+    p_ack = binascii.b2a_hex(recv_p.payload[17:18]).decode('utf-8')
+    if p_type == '02' and p_euid == selfeuid and p_ack == '01':
+        logger.info('gnrs sign up ok')
+        return True
+    else:
+        logger.error('gnrs sign up wrong')
+        return False
+
+
 def start_request():
-    cmd_port = 35000
-    gnrs_addr = ('192.168.44.148', 8899)
     content_euid = 'ab92b7014f2887ea05450143f4c9ad01'
     # content_euid = 'ecaca102a95a828d0b081cefd0747a5d'
     # content_euid='f80af4ee95da779efde6dc28329438f3'
     # content_euid='2a22cec2eaaa0e9ea91743a3226064b8'
+
     query_packet = ICNPacket()
-    query_packet.setHeader('ffffac7196110678d84d03687eab03fb', 'b13ded0762217339428aba5d508ddf5c', '00')
+    query_packet.setHeader(selfeuid, cm1_euid, '00')
     query_packet.setPayload(binascii.a2b_hex('03' + content_euid + '00'))
     query_packet.fill_packet()
     query_packet.print_packet()
@@ -135,23 +178,22 @@ def start_request():
     # flag=3
     # while flag>0:
     recv_p = send_cmd_packet(query_packet.grap_packet(), gnrs_addr, True)
-    p_type=binascii.b2a_hex(recv_p.payload[:1]).decode('utf-8')
-    if p_type=='04':
+    p_type = binascii.b2a_hex(recv_p.payload[:1]).decode('utf-8')
+    if p_type == '04':
         recv_euid = binascii.b2a_hex(recv_p.payload[1:17])
         print('recv_euid:' + recv_euid.decode('utf-8'))
         print(binascii.b2a_hex(recv_p.payload[17:21]))
         recv_na = socket.inet_ntoa(recv_p.payload[17:21])
+        print('recv_na:' + recv_na)
     else:
         logger.error('receive wrong packet!')
-
     # recv_na='192.168.2.234'
-    print('recv_na:' + recv_na)
     # content_na = (query_gnrs(content_euid), cmd_port)
-    if recv_euid.decode('utf-8') == content_euid and not recv_na == None:
-    # if True:
+    if not recv_na == None and recv_euid.decode('utf-8') == content_euid:
+        # if True:
         logger.info('content_na is ' + str(recv_na))
         request_packet = ICNPacket()
-        request_packet.setHeader('ffffac7196110678d84d03687eab03fb', 'b13ded0762217339428aba5d508ddf5c', '00')
+        request_packet.setHeader(selfeuid, pi1_euid, '00')
         request_packet.setPayload(binascii.a2b_hex('0d' + content_euid))
         request_packet.fill_packet()
         request_packet.print_packet()
@@ -187,30 +229,20 @@ def auto_request():
                 nowna = ip_list[i]
                 print("------%s->%s-------" % (lastna, nowna))
                 print("AP %d - %s Linked! NA is %s" % (i, mac_list[i], ip_list[i]))
-                if lastna != 'None':
-                    time.sleep(1)
+                if not lastna == 'None':
+                    time.sleep(2)
                     print("--------NA:%s->%s" % (lastna, nowna))
+                    flag = False
+                    while flag == False:
+                        flag = gnrs_sign_up(nowna)
+                        logger.info('Sign in ' + nowna + ' ok')
                     start_request()
         time.sleep(0.1)
 
 
-def do_request_without_gnrs():
-    cmd_port = 35000
-    video_content_euid = 'ab92b7014f2887ea05450143f4c9ad01'
-    temprature_content_euid = ''
-    # content_na = ('192.168.1.21', cmd_port)
-    content_na = ('192.168.2.100', cmd_port)
-    # content_na = ('192.168.3.100', cmd_port)
-    request_packet = ICNPacket()
-    request_packet.setHeader('ffffac7196110678d84d03687eab03fb', 'b13ded0762217339428aba5d508ddf5c', '00')
-    request_packet.setPayload(binascii.a2b_hex('0d' + video_content_euid))
-    request_packet.fill_packet()
-    request_packet.print_packet()
-    send_cmd_packet(request_packet.grap_packet(), content_na, False)
-
-
 if __name__ == '__main__':
-    data_port = 36000
     # start_request()
     # do_request_without_gnrs()
     auto_request()
+    # flag = gnrs_sign_up('192.168.3.104')
+    # print(flag)

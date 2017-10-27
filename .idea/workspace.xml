@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5d7c4b1-5c3a-4de2-9dcf-d4ef4537a9d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ICN.iml" afterPath="$PROJECT_DIR$/.idea/ICN.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ncs/ncs_socket_client.py" afterPath="$PROJECT_DIR$/ncs/ncs_socket_client.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ncs/signature.py" afterPath="$PROJECT_DIR$/ncs/signature.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packet/recv_server.py" afterPath="$PROJECT_DIR$/packet/recv_server.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packet/send_client.py" afterPath="$PROJECT_DIR$/packet/send_client.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packet/test2.py" afterPath="$PROJECT_DIR$/packet/test2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packet/test3.py" afterPath="$PROJECT_DIR$/packet/test3.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,30 +17,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="recv_server.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="recv_server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/packet/recv_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
               <folding>
-                <element signature="e#5147#5388#0" expanded="false" />
-                <element signature="e#5426#5651#0" expanded="false" />
+                <element signature="e#5598#5839#0" expanded="false" />
+                <element signature="e#5877#6102#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="send_client.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="send_client.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/packet/send_client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="126" column="53" lean-forward="false" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
+            <state relative-caret-position="162">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#518#709#0" expanded="false" />
-                <element signature="e#1452#3544#0" expanded="false" />
-                <element signature="e#3573#4167#0" expanded="false" />
-                <element signature="e#7258#7856#0" expanded="false" />
+                <element signature="e#777#1375#0" expanded="false" />
+                <element signature="e#1410#1601#0" expanded="false" />
+                <element signature="e#2344#4436#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signature.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ncs/signature.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="17" column="57" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,6 +71,7 @@
       <find>tlv</find>
       <find>total</find>
       <find>234</find>
+      <find>ok</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -96,12 +106,10 @@
         <option value="$PROJECT_DIR$/packet/udt_client.py" />
         <option value="$PROJECT_DIR$/packet/packet_server.py" />
         <option value="$PROJECT_DIR$/packet/packet_client.py" />
-        <option value="$PROJECT_DIR$/ncs/signature.py" />
         <option value="$PROJECT_DIR$/gnrs/gnrs_socket_server.py" />
         <option value="$PROJECT_DIR$/packet/test.py" />
         <option value="$PROJECT_DIR$/ncs/ncs_socket_server.py" />
         <option value="$PROJECT_DIR$/ncs/ncs_http_server.py" />
-        <option value="$PROJECT_DIR$/ncs/ncs_socket_client.py" />
         <option value="$PROJECT_DIR$/packet/logging.conf" />
         <option value="$PROJECT_DIR$/packet/udp_client.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
@@ -110,8 +118,10 @@
         <option value="$PROJECT_DIR$/packet/test_server.py" />
         <option value="$PROJECT_DIR$/packet/test2.py" />
         <option value="$PROJECT_DIR$/packet/test3.py" />
-        <option value="$PROJECT_DIR$/packet/recv_server.py" />
+        <option value="$PROJECT_DIR$/ncs/ncs_socket_client.py" />
+        <option value="$PROJECT_DIR$/ncs/signature.py" />
         <option value="$PROJECT_DIR$/packet/send_client.py" />
+        <option value="$PROJECT_DIR$/packet/recv_server.py" />
       </list>
     </option>
   </component>
@@ -139,6 +149,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -155,8 +167,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -191,7 +201,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.send_client">
+  <component name="RunManager" selected="Python.recv_server (1)">
+    <configuration name="ncs_socket_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ncs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ICN" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ncs/ncs_socket_client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="recv_server (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -226,19 +253,19 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="signature" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/packet" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ncs" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ICN" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/packet/test2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ncs/signature.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -260,37 +287,20 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="test_server" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/packet" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ICN" />
-      <option name="SCRIPT_NAME" value="C:\Users\47521\PycharmProjects\ICN\packet\recv_server.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.test3" />
       <item index="1" class="java.lang.String" itemvalue="Python.send_client" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test_server" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test2" />
-      <item index="4" class="java.lang.String" itemvalue="Python.recv_server (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.recv_server (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Python.ncs_socket_client" />
+      <item index="4" class="java.lang.String" itemvalue="Python.signature" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.send_client" />
-        <item index="1" class="java.lang.String" itemvalue="Python.recv_server (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test3" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test2" />
-        <item index="4" class="java.lang.String" itemvalue="Python.test_server" />
+        <item index="0" class="java.lang.String" itemvalue="Python.recv_server (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.send_client" />
+        <item index="2" class="java.lang.String" itemvalue="Python.signature" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ncs_socket_client" />
+        <item index="4" class="java.lang.String" itemvalue="Python.test3" />
       </list>
     </recent_temporary>
   </component>
@@ -317,13 +327,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="508" y="36" width="1303" height="780" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18268467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6696833" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.9721362" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22637014" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -395,13 +406,10 @@
     <entry file="file://$PROJECT_DIR$/.gitignore.txt" />
     <entry file="file://$PROJECT_DIR$/packet/udt_client.py" />
     <entry file="file://$PROJECT_DIR$/packet/udt_server.py" />
-    <entry file="file://$PROJECT_DIR$/ncs/signature.py" />
     <entry file="file://$PROJECT_DIR$/ncs/ncs_http_server.py" />
-    <entry file="file://$PROJECT_DIR$/ncs/ncs_socket_client.py" />
     <entry file="file://$PROJECT_DIR$/gateway/gateway_mapping_demo.py" />
     <entry file="file://$PROJECT_DIR$/gateway/go1.py" />
     <entry file="file://$PROJECT_DIR$/gnrs/gnrs_http_server.py" />
-    <entry file="file://$PROJECT_DIR$/gnrs/gnrs_socket_client.py" />
     <entry file="file://$PROJECT_DIR$/gnrs/gnrs_socket_server.py" />
     <entry file="file://$PROJECT_DIR$/packet/packet_client.py" />
     <entry file="file://$PROJECT_DIR$/packet/test.py" />
@@ -507,27 +515,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packet/recv_server.py">
+    <entry file="file://$PROJECT_DIR$/gnrs/gnrs_socket_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+        <state relative-caret-position="161">
+          <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ncs/ncs_socket_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="93" column="22" lean-forward="true" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ncs/signature.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="17" column="57" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="57" />
           <folding>
-            <element signature="e#5147#5388#0" expanded="false" />
-            <element signature="e#5426#5651#0" expanded="false" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/packet/send_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="126" column="53" lean-forward="false" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
+        <state relative-caret-position="162">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#518#709#0" expanded="false" />
-            <element signature="e#1452#3544#0" expanded="false" />
-            <element signature="e#3573#4167#0" expanded="false" />
-            <element signature="e#7258#7856#0" expanded="false" />
+            <element signature="e#777#1375#0" expanded="false" />
+            <element signature="e#1410#1601#0" expanded="false" />
+            <element signature="e#2344#4436#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packet/recv_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+          <folding>
+            <element signature="e#5598#5839#0" expanded="false" />
+            <element signature="e#5877#6102#0" expanded="false" />
           </folding>
         </state>
       </provider>

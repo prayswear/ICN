@@ -3,8 +3,7 @@ import socket
 
 logging.config.fileConfig('logging.conf')
 logger = logging.getLogger('myLogger')
-ncs_ip = '127.0.0.1'
-ncs_port = 12701
+
 
 def request_for_reply(request):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -80,12 +79,12 @@ def query_all():
 
 
 if __name__ == '__main__':
-    ncs_ip = '192.168.46.175'
-    ncs_port = 22700
+    ncs_ip = '192.168.47.16'
+    ncs_port = 22701
 
     # list=query_all()
     # print(list)
-    a=get_guid('lij235q33','')
+    a=get_guid('lijq','')
     print(a)
 
     # print(get_guid('lijqphone', 'phone'))

@@ -14,7 +14,7 @@ logger = logging.getLogger('myLogger')
 
 LAN_UDP_MTU = 1472
 STD_UDP_MTU = 548
-UDP_MTU = LAN_UDP_MTU
+UDP_MTU = STD_UDP_MTU
 ICN_MTU = UDP_MTU - 36  # 36 is len of none-tlv icn head
 ICN_TEMP_MTU = ICN_MTU - 8  # 8 is len of tlv
 ICN_CONTENT_MTU = ICN_TEMP_MTU - 1 - 16  # 1 is icn type, 16 is content euid
@@ -37,7 +37,7 @@ def packet_recv_rate():
             fp.write(str(datetime.datetime.now()) + '  recv_rate: ' + str(ave_packet_recv_rate) + '\n')
             fp.flush()
             ave_packet_recv_rate = 0
-            time.sleep(2)
+            time.sleep(3)
 
 
 def data_finish_handler(packet_id, address):
@@ -47,17 +47,22 @@ def data_finish_handler(packet_id, address):
     p.gen_from_hex(data_hex)
     p.print_packet_without_payload()
     content_euid = binascii.b2a_hex(p.payload[1:17])
-    real_data = p.payload[17:]
+    timestamp=binascii.b2a_hex(p.payload[17:21]).decode('utf-8')+'_'+str(int(time.time()))
+    real_data = p.payload[21:]
     # reply_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     # reply_socket.sendto('OK'.encode('utf-8'), address)
     if content_euid.decode('utf-8')=='ab92b7014f2887ea05450143f4c9ad01':
-        with open('input.h264', 'wb') as f:
+        with open('cam1_'+timestamp+'.h264', 'wb') as f:
             f.write(real_data)
             f.close()
-        os.system('avconv -r 24 -i input.h264 -vcodec copy output.mp4 -y')
-        filetime = str(int(time.time()))
-        os.system('cp output.mp4 cam1_' + filetime + '.mp4')
-        filepath = 'file:///home/lijq/PycharmProjects/ICN/packet/cam1_' + filetime + '.mp4'
+        os.system('avconv -r 24 -i cam1_'+timestamp+'.h264 -vcodec copy cam1_' + timestamp + '.mp4 -y')
+        os.system('cp cam1_'+timestamp+'''.mp4 /home/lijq/Desktop/apache-tomcat-7.0.82/webapps/page/cam1_''' + timestamp + '''.mp4''')
+        os.system('rm cam1_'+timestamp+'.h264')
+        # filepath = 'file:///home/lijq/PycharmProjects/ICN/packet/cam1_' + filetime + '.mp4'
+        filepath = 'cam1_' + timestamp + '.mp4'
+        # with open('input'+timestamp+'.txt', 'wb') as f:
+        #     f.write(timestamp.encode('utf-8'))
+        #     f.close()
         notify_page(filepath, content_euid, str(address[0]))
     else:
         print(content_euid)
@@ -70,7 +75,7 @@ def timeout_handler(packet_id, address):
     start_time = time.time()
     while True:
         timegap = time.time() - start_time
-        if timegap > 2:
+        if timegap > 6:
             if packet_id in temp_packet_dict.keys():
                 data_finish_handler(packet_id, address)
                 global ave_packet_recv_rate
@@ -81,8 +86,8 @@ def timeout_handler(packet_id, address):
 
 
 def data_handler(data, address):
-    logger.info('Recv UDP packet from: ' + str(address))
-    recv_times = 2
+    # logger.info('Recv UDP packet from: ' + str(address))
+    recv_times = 1
     p = ICNPacket()
     p.gen_from_hex(data)
     packet_id = binascii.b2a_hex(p.tlv[0:2])
@@ -94,7 +99,7 @@ def data_handler(data, address):
         packet_num = int(num) * recv_times - recv_times + 1
     else:
         packet_num = (int(num) + 1) * recv_times - recv_times + 1
-    print(packet_id, ' ', packet_length, ' ', packet_num, ' ', packet_seq)
+    logger.info(packet_id.decode('utf-8')+' '+ str(packet_length)+ ' '+ str(packet_num)+' '+str(packet_seq))
     real_data = p.payload[17:len(p.payload)]
     if packet_seq == 0:
         temp_dict = {}
@@ -103,7 +108,7 @@ def data_handler(data, address):
         temp_dict['count'] = packet_num
         temp_dict['total'] = temp_dict['count']
         temp_packet_dict[packet_id] = temp_dict
-        print('packet_seq: ' + str(packet_seq))
+        logger.info('packet_seq: ' + str(packet_seq))
         threading._start_new_thread(timeout_handler, (packet_id, address))
     else:
         if not packet_id in temp_packet_dict.keys():
@@ -113,9 +118,9 @@ def data_handler(data, address):
                         temp_packet_dict[packet_id]['data'][
                         packet_seq * DATA_SIZE_PER_UDP + len(real_data):packet_length]
             temp_packet_dict[packet_id]['data'] = temp_data
-            print('packet_seq: ' + str(packet_seq))
+            logger.info('packet_seq: ' + str(packet_seq))
     temp_packet_dict[packet_id]['count'] -= 1
-    print('count: ' + str(temp_packet_dict[packet_id]['count']))
+    logger.info('count: ' + str(temp_packet_dict[packet_id]['count']))
     if temp_packet_dict[packet_id]['count'] == 0:
         global ave_packet_recv_rate
         ave_packet_recv_rate = 1
@@ -130,7 +135,7 @@ def start_data_server(address):
     threading._start_new_thread(packet_recv_rate, ())
     while True:
         data, client_address = data_socket.recvfrom(UDP_MTU)
-        print('get new udp packet from: '+str(client_address))
+        # print('get new udp packet from: '+str(client_address))
         threading._start_new_thread(data_handler, (data, client_address))
 
 
