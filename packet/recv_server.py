@@ -37,7 +37,7 @@ def packet_recv_rate():
             fp.write(str(datetime.datetime.now()) + '  recv_rate: ' + str(ave_packet_recv_rate) + '\n')
             fp.flush()
             ave_packet_recv_rate = 0
-            time.sleep(3)
+            time.sleep(2)
 
 
 def data_finish_handler(packet_id, address):
@@ -60,9 +60,6 @@ def data_finish_handler(packet_id, address):
         os.system('rm cam1_'+timestamp+'.h264')
         # filepath = 'file:///home/lijq/PycharmProjects/ICN/packet/cam1_' + filetime + '.mp4'
         filepath = 'cam1_' + timestamp + '.mp4'
-        # with open('input'+timestamp+'.txt', 'wb') as f:
-        #     f.write(timestamp.encode('utf-8'))
-        #     f.close()
         notify_page(filepath, content_euid, str(address[0]))
     else:
         print(content_euid)
@@ -75,7 +72,7 @@ def timeout_handler(packet_id, address):
     start_time = time.time()
     while True:
         timegap = time.time() - start_time
-        if timegap > 6:
+        if timegap > 2:
             if packet_id in temp_packet_dict.keys():
                 data_finish_handler(packet_id, address)
                 global ave_packet_recv_rate
@@ -87,20 +84,23 @@ def timeout_handler(packet_id, address):
 
 def data_handler(data, address):
     # logger.info('Recv UDP packet from: ' + str(address))
-    recv_times = 1
-    p = ICNPacket()
-    p.gen_from_hex(data)
-    packet_id = binascii.b2a_hex(p.tlv[0:2])
-    packet_length = int(binascii.b2a_hex(p.tlv[2:6]), 16)
-    packet_seq = int(binascii.b2a_hex(p.tlv[6:8]), 16)
+    recv_times = 2
+    # p = ICNPacket()
+    # p.gen_from_hex(data)
+    # packet_id = binascii.b2a_hex(p.tlv[0:2])
+    # packet_length = int(binascii.b2a_hex(p.tlv[2:6]), 16)
+    # packet_seq = int(binascii.b2a_hex(p.tlv[6:8]), 16)
+    packet_id = binascii.b2a_hex(data[36:38]).decode('utf-8')
+    packet_length = int(binascii.b2a_hex(data[38:42]), 16)
+    packet_seq = int(binascii.b2a_hex(data[42:44]), 16)
     DATA_SIZE_PER_UDP = ICN_CONTENT_MTU
     num = packet_length / DATA_SIZE_PER_UDP
     if num == int(num):
         packet_num = int(num) * recv_times - recv_times + 1
     else:
         packet_num = (int(num) + 1) * recv_times - recv_times + 1
-    logger.info(packet_id.decode('utf-8')+' '+ str(packet_length)+ ' '+ str(packet_num)+' '+str(packet_seq))
-    real_data = p.payload[17:len(p.payload)]
+    logger.info(packet_id+' '+ str(packet_length)+ ' '+str(packet_seq)+'/'+str(packet_num))
+    real_data = data[53:]
     if packet_seq == 0:
         temp_dict = {}
         temp_data = binascii.a2b_hex('00' * packet_length)
@@ -108,7 +108,7 @@ def data_handler(data, address):
         temp_dict['count'] = packet_num
         temp_dict['total'] = temp_dict['count']
         temp_packet_dict[packet_id] = temp_dict
-        logger.info('packet_seq: ' + str(packet_seq))
+        # logger.info('packet_seq: ' + str(packet_seq))
         threading._start_new_thread(timeout_handler, (packet_id, address))
     else:
         if not packet_id in temp_packet_dict.keys():
@@ -118,7 +118,7 @@ def data_handler(data, address):
                         temp_packet_dict[packet_id]['data'][
                         packet_seq * DATA_SIZE_PER_UDP + len(real_data):packet_length]
             temp_packet_dict[packet_id]['data'] = temp_data
-            logger.info('packet_seq: ' + str(packet_seq))
+            # logger.info('packet_seq: ' + str(packet_seq))
     temp_packet_dict[packet_id]['count'] -= 1
     logger.info('count: ' + str(temp_packet_dict[packet_id]['count']))
     if temp_packet_dict[packet_id]['count'] == 0:
